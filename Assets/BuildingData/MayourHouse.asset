@@ -16,10 +16,10 @@ MonoBehaviour:
   buildingName: MayourHouse
   description: A building in your city.
   icon: {fileID: 0}
-  category: 6
+  category: 0
   prefab: {fileID: 3726648131083330931, guid: e8aa900ccb7efce4fb74764e6a06ad02, type: 3}
-  footprintWidth: 5
-  footprintHeight: 4
+  footprintWidth: 2
+  footprintHeight: 2
   placementCost: 5000
   maintenanceCostPerMin: 5
   incomePerTick: 0

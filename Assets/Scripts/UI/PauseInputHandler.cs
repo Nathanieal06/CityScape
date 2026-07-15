@@ -1,3 +1,5 @@
+using CityScape.GridSystem.Placement;
+using CityScape.GridSystem.Road;
 using CityScape.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,7 +15,23 @@ namespace CityScape.UI
         private void Update()
         {
             if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
-                GameManager.Instance?.TogglePause();
+            {
+                bool isPlacingBuilding = BuildingPlacer.Instance != null && BuildingPlacer.Instance.HasSelection;
+                bool isPlacingRoad = RoadPlacer.Instance != null && RoadPlacer.Instance.IsRoadModeActive;
+
+                if (isPlacingBuilding)
+                {
+                    BuildingPlacer.Instance.ClearSelection();
+                }
+                else if (isPlacingRoad)
+                {
+                    RoadPlacer.Instance.ExitRoadMode();
+                }
+                else
+                {
+                    GameManager.Instance?.TogglePause();
+                }
+            }
         }
     }
 }

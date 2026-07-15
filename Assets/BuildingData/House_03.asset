@@ -19,7 +19,7 @@ MonoBehaviour:
   category: 0
   prefab: {fileID: 7198912708723075779, guid: ac57ff0979d8f704e9163673e95b4638, type: 3}
   footprintWidth: 3
-  footprintHeight: 3
+  footprintHeight: 2
   placementCost: 500
   maintenanceCostPerMin: 5
   incomePerTick: 0

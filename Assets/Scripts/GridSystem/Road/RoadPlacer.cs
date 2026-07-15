@@ -8,23 +8,6 @@ using UnityEngine.InputSystem;
 
 namespace CityScape.GridSystem.Road
 {
-    /// <summary>
-    /// Drag-to-build road placement system.
-    ///
-    /// How to use:
-    ///   1. Press B (or your chosen toggleRoadModeKey) OR call EnterRoadMode() from a UI button.
-    ///   2. Left-click and drag across the grid — roads appear on every cell the cursor passes.
-    ///   3. Right-click removes a road tile under the cursor.
-    ///   4. Press Escape or call ExitRoadMode() to return to normal mode.
-    ///
-    /// Inspector wiring:
-    ///   Mouse Interactor      → MouseWorldInteractor in scene
-    ///   Straight Road Prefab  → MainRoad.prefab        (required)
-    ///   Corner Road Prefab    → CurveTurnRoad.prefab   (required)
-    ///   T Junction Prefab     → your T-junction prefab (optional, falls back to Straight)
-    ///   Cross Road Prefab     → optional, falls back to Straight
-    ///   Road Container        → optional empty GO to parent all road tiles under
-    /// </summary>
     public class RoadPlacer : MonoBehaviour
     {
         // ─────────────────────────────────────────────
@@ -32,83 +15,62 @@ namespace CityScape.GridSystem.Road
         // ─────────────────────────────────────────────
 
         [Header("System References")]
-        [Tooltip("MouseWorldInteractor in the scene.")]
         [SerializeField] private MouseWorldInteractor mouseInteractor;
 
         [Header("Road Prefabs")]
-        [Tooltip("Straight road tile (MainRoad.prefab). REQUIRED.")]
         [SerializeField] private GameObject straightRoadPrefab;
-
-        [Tooltip("Corner / turn road tile (CurveTurnRoad.prefab). REQUIRED.")]
         [SerializeField] private GameObject cornerRoadPrefab;
-
-        [Tooltip("T-Junction tile. Optional — falls back to Straight if empty.")]
         [SerializeField] private GameObject tJunctionRoadPrefab;
-
-        [Tooltip("Cross / intersection tile. Optional — falls back to Straight if empty.")]
         [SerializeField] private GameObject crossRoadPrefab;
-
-        [Tooltip("Dead-end cap tile. Optional — falls back to Straight if empty.")]
         [SerializeField] private GameObject deadEndRoadPrefab;
 
         [Header("Placement Settings")]
-        [Tooltip("World-space Y offset added when spawning road tiles.")]
         [SerializeField] private float roadHeightOffset = 0f;
-
-        [Tooltip("How many grid cells each road tile covers per side (e.g. 2 = 2x2 footprint). " +
-                 "Must match the physical size of your road prefab.")]
         [SerializeField, Min(1)] private int roadFootprintSize = 2;
 
         [Header("Input")]
-        [Tooltip("Key to toggle road build mode on/off. Default: B")]
         [SerializeField] private Key toggleRoadModeKey = Key.B;
 
         [Header("Road Container")]
-        [Tooltip("Optional parent Transform for all road GameObjects.")]
         [SerializeField] private Transform roadContainer;
 
         [Header("Hover Highlight")]
-        [Tooltip("Semi-transparent material shown under the cursor while in road mode.")]
+        [Tooltip("Semi-transparent material for the 3D ghost preview.")]
         [SerializeField] private Material hoverHighlightMaterial;
+        [Tooltip("Optional: Material used for the red delete highlight quad (auto-generated if empty).")]
+        [SerializeField] private Material deleteHighlightMaterial;
 
         // ─────────────────────────────────────────────
         //  Events
         // ─────────────────────────────────────────────
 
-        /// <summary>Fired when road mode is toggled. True = entered, False = exited.</summary>
         public event Action<bool> OnRoadModeChanged;
-
-        /// <summary>Fired when a road tile is successfully placed.</summary>
         public event Action<GridCoordinates> OnRoadPlaced;
-
-        /// <summary>Fired when a road tile is removed.</summary>
         public event Action<GridCoordinates> OnRoadRemoved;
 
         // ─────────────────────────────────────────────
         //  State
         // ─────────────────────────────────────────────
 
-        /// <summary>Whether road build mode is currently active.</summary>
         public bool IsRoadModeActive { get; private set; }
 
         private readonly Dictionary<GridCoordinates, PlacedRoad> _placedRoads
             = new Dictionary<GridCoordinates, PlacedRoad>();
 
-        // Per-stroke deduplication (cleared on each new press)
-        private readonly HashSet<GridCoordinates> _visitedThisStroke
-            = new HashSet<GridCoordinates>();
+        // Placement dragging
+        private bool _isDraggingPlacement;
+        private GridCoordinates _dragStartBlock;
+        private List<GridCoordinates> _currentPreviewPath = new List<GridCoordinates>();
 
-        // Bresenham gap-fill tracking (in block-space: divide by roadFootprintSize)
-        private GridCoordinates _lastStrokeBlock;
-        private bool            _hasLastStrokeBlock;
-#pragma warning disable CS0414 // field assigned but value never used — reserved for future terrain-start guard
-        private bool            _strokeStartedOnTerrain;
-#pragma warning restore CS0414
+        // Removal dragging
+        private bool _isDraggingRemoval;
 
-        // Hover quad
-        private GameObject   _hoverObj;
-        private MeshRenderer _hoverRenderer;
-        private bool         _hoverVisible;
+        // Visuals
+        private GameObject _deleteQuadObj;
+        private MeshRenderer _deleteQuadRenderer;
+        
+        private Transform _ghostContainer;
+        private List<GameObject> _ghostPool = new List<GameObject>();
 
         // ─────────────────────────────────────────────
         //  Unity Lifecycle
@@ -124,9 +86,12 @@ namespace CityScape.GridSystem.Road
 
         private void Start()
         {
-            // Use Start (not Awake) so GridManager.Instance is guaranteed to exist.
             LogMissingRefs();
-            BuildHoverQuad();
+            BuildDeleteQuad();
+            
+            _ghostContainer = new GameObject("RoadGhosts").transform;
+            _ghostContainer.SetParent(transform, false);
+            
             Debug.Log("[RoadPlacer] Ready. Press B to toggle road mode.");
         }
 
@@ -135,16 +100,12 @@ namespace CityScape.GridSystem.Road
             GridManager gm = GridManager.Instance;
             if (gm == null) return;
 
-            // Remove all existing roads
             var existing = new List<GridCoordinates>(_placedRoads.Keys);
             foreach (var coords in existing)
             {
                 TryRemoveRoad(coords, gm);
             }
 
-            _visitedThisStroke.Clear();
-
-            // Force place roads
             foreach (var rData in data.roads)
             {
                 GridCoordinates origin = new GridCoordinates(rData.gridX, rData.gridY);
@@ -161,7 +122,6 @@ namespace CityScape.GridSystem.Road
                 SpawnOrUpdateRoadTile(origin, gm);
             }
 
-            // Refresh all roads so they connect correctly
             var allRoads = new List<GridCoordinates>(_placedRoads.Keys);
             foreach (var coords in allRoads)
             {
@@ -171,26 +131,20 @@ namespace CityScape.GridSystem.Road
 
         private void Update()
         {
-            // Toggle key and Escape always work regardless of road mode state
             HandleToggleInput();
-
-            // Right-click removes roads anytime, even outside road mode
-            HandleRemoval();
 
             if (!IsRoadModeActive) return;
 
-            // ── Hover highlight ──────────────────────────────────────
-            UpdateHoverHighlight();
-
-            // ── Left-click / drag → place roads ─────────────────────
+            // Handle logic
+            HandleRemoval();
             HandlePlacement();
+            UpdateHoverVisuals();
         }
 
         // ─────────────────────────────────────────────
         //  Public API
         // ─────────────────────────────────────────────
 
-        /// <summary>Activates road build mode. Call from UI buttons.</summary>
         public void EnterRoadMode()
         {
             if (IsRoadModeActive) return;
@@ -199,19 +153,21 @@ namespace CityScape.GridSystem.Road
             Debug.Log("[RoadPlacer] Road mode ON — click-drag on the grid to draw roads.");
         }
 
-        /// <summary>Deactivates road build mode.</summary>
         public void ExitRoadMode()
         {
             if (!IsRoadModeActive) return;
             IsRoadModeActive = false;
-            _hasLastStrokeBlock = false;
-            _visitedThisStroke.Clear();
-            SetHoverVisible(false);
+            
+            _isDraggingPlacement = false;
+            _isDraggingRemoval = false;
+            _currentPreviewPath.Clear();
+            HideAllGhosts();
+            if (_deleteQuadObj != null) _deleteQuadObj.SetActive(false);
+            
             OnRoadModeChanged?.Invoke(false);
             Debug.Log("[RoadPlacer] Road mode OFF.");
         }
 
-        /// <summary>Read-only snapshot of all placed roads (for save/load).</summary>
         public IReadOnlyDictionary<GridCoordinates, PlacedRoad> GetPlacedRoads()
             => _placedRoads;
 
@@ -233,6 +189,8 @@ namespace CityScape.GridSystem.Road
                 ExitRoadMode();
         }
 
+        private GridCoordinates _lastDragBlock;
+
         // ─────────────────────────────────────────────
         //  Input: Road Placement (click + drag)
         // ─────────────────────────────────────────────
@@ -240,60 +198,97 @@ namespace CityScape.GridSystem.Road
         private void HandlePlacement()
         {
             if (Mouse.current == null) return;
+            if (_isDraggingRemoval) return; // Don't build while deleting
 
-            // ── On a new mouse press, reset the stroke ───────────────
+            GridManager gm = GridManager.Instance;
+            if (gm == null || mouseInteractor == null || !mouseInteractor.HasValidHit)
+            {
+                return;
+            }
+
+            GridCoordinates rawCell = gm.WorldToGrid(mouseInteractor.LastWorldPosition);
+            GridCoordinates currentBlock = ClampAndSnapToGrid(rawCell, gm);
+
+            // ── On Mouse Down ───────────────────────────────
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {
-                // If they click on a UI element (e.g. another button), exit road mode.
-                // We ignore the click that ACTIVATES road mode because that typically
-                // happens on mouse release, so wasPressedThisFrame is false when entering.
                 if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
                 {
                     ExitRoadMode();
                     return;
                 }
 
-                _strokeStartedOnTerrain = true;
-                _visitedThisStroke.Clear();
-                _hasLastStrokeBlock = false;
+                _isDraggingPlacement = true;
+                _dragStartBlock = currentBlock;
+                _lastDragBlock = currentBlock;
+                _currentPreviewPath.Clear();
+                _currentPreviewPath.Add(currentBlock);
             }
 
-            // ── On button release, close the stroke ──────────────────
-            if (Mouse.current.leftButton.wasReleasedThisFrame)
+            // ── While Mouse Held ─────────────────────────────
+            if (_isDraggingPlacement)
             {
-                _hasLastStrokeBlock = false;
-                _visitedThisStroke.Clear();
-                _strokeStartedOnTerrain = false;
+                if (currentBlock.X != _lastDragBlock.X || currentBlock.Y != _lastDragBlock.Y)
+                {
+                    List<GridCoordinates> segment = GetLShapePath(_lastDragBlock, currentBlock);
+                    
+                    for (int i = 1; i < segment.Count; i++)
+                    {
+                        var block = segment[i];
+                        if (_currentPreviewPath.Count > 1 && block.Equals(_currentPreviewPath[_currentPreviewPath.Count - 2]))
+                        {
+                            // Backtracking exactly to the previous block
+                            _currentPreviewPath.RemoveAt(_currentPreviewPath.Count - 1);
+                        }
+                        else if (!_currentPreviewPath.Contains(block))
+                        {
+                            _currentPreviewPath.Add(block);
+                        }
+                    }
+                    _lastDragBlock = currentBlock;
+                }
             }
 
-            // ── While the button is held, place roads ────────────────
-            if (!Mouse.current.leftButton.isPressed) return;
-            if (mouseInteractor == null || !mouseInteractor.HasValidHit) return;
-
-            GridManager gm = GridManager.Instance;
-            if (gm == null) return;
-
-            // Snap the cursor cell to the block grid
-            GridCoordinates rawCell     = gm.WorldToGrid(mouseInteractor.LastWorldPosition);
-            GridCoordinates currentBlock = SnapToBlock(rawCell);
-
-            if (_hasLastStrokeBlock)
+            // ── On Mouse Up ──────────────────────────────────
+            if (Mouse.current.leftButton.wasReleasedThisFrame && _isDraggingPlacement)
             {
-                // Bresenham in block-space so every block the cursor passes is filled
+                _isDraggingPlacement = false;
+                
+                List<GridCoordinates> actuallyPlaced = new List<GridCoordinates>();
+
+                // 1. Commit all roads
+                foreach (var block in _currentPreviewPath)
+                {
+                    if (TryPlaceRoadData(block, gm))
+                    {
+                        actuallyPlaced.Add(block);
+                    }
+                }
+
+                // 2. Refresh visuals for all placed roads and their neighbours
+                HashSet<GridCoordinates> toRefresh = new HashSet<GridCoordinates>(actuallyPlaced);
                 int s = roadFootprintSize;
-                GridCoordinates fromBS = new GridCoordinates(_lastStrokeBlock.X / s, _lastStrokeBlock.Y / s);
-                GridCoordinates toBS   = new GridCoordinates(currentBlock.X   / s, currentBlock.Y   / s);
+                foreach (var block in actuallyPlaced)
+                {
+                    foreach (var n in RoadTileSelector.GetBlockNeighbours(block, s))
+                    {
+                        toRefresh.Add(n);
+                    }
+                }
 
-                foreach (GridCoordinates blockCoord in BresenhamLine(fromBS, toBS))
-                    TryPlaceRoad(new GridCoordinates(blockCoord.X * s, blockCoord.Y * s), gm);
-            }
-            else
-            {
-                TryPlaceRoad(currentBlock, gm);
-            }
+                foreach (var block in toRefresh)
+                {
+                    RefreshNeighbour(block, gm);
+                }
+                
+                // Fire events
+                foreach (var block in actuallyPlaced)
+                {
+                    OnRoadPlaced?.Invoke(block);
+                }
 
-            _lastStrokeBlock    = currentBlock;
-            _hasLastStrokeBlock = true;
+                _currentPreviewPath.Clear();
+            }
         }
 
         // ─────────────────────────────────────────────
@@ -303,28 +298,37 @@ namespace CityScape.GridSystem.Road
         private void HandleRemoval()
         {
             if (Mouse.current == null) return;
-            if (!Mouse.current.rightButton.wasPressedThisFrame) return;
-            if (mouseInteractor == null || !mouseInteractor.HasValidHit) return;
+            if (_isDraggingPlacement) return; // Don't delete while building
 
-            GridManager gm = GridManager.Instance;
-            if (gm == null) return;
+            if (Mouse.current.rightButton.wasPressedThisFrame)
+            {
+                if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+                _isDraggingRemoval = true;
+            }
 
-            GridCoordinates rawCell = gm.WorldToGrid(mouseInteractor.LastWorldPosition);
-            TryRemoveRoad(SnapToBlock(rawCell), gm);
+            if (Mouse.current.rightButton.wasReleasedThisFrame)
+            {
+                _isDraggingRemoval = false;
+            }
+
+            if (_isDraggingRemoval)
+            {
+                if (mouseInteractor == null || !mouseInteractor.HasValidHit) return;
+                GridManager gm = GridManager.Instance;
+                if (gm == null) return;
+
+                GridCoordinates rawCell = gm.WorldToGrid(mouseInteractor.LastWorldPosition);
+                TryRemoveRoad(ClampAndSnapToGrid(rawCell, gm), gm);
+            }
         }
 
         // ─────────────────────────────────────────────
         //  Road Placement Logic
         // ─────────────────────────────────────────────
 
-        private void TryPlaceRoad(GridCoordinates blockOrigin, GridManager gm)
+        /// <summary>Places road data but doesn't instantly refresh neighbours (for batch placement)</summary>
+        private bool TryPlaceRoadData(GridCoordinates blockOrigin, GridManager gm)
         {
-            // blockOrigin is the bottom-left cell of the NxN footprint.
-            // Deduplicate: skip if this block was already placed this stroke.
-            if (_visitedThisStroke.Contains(blockOrigin)) return;
-            _visitedThisStroke.Add(blockOrigin);
-
-            // Validate every cell in the footprint before placing anything
             int s = roadFootprintSize;
             for (int dy = 0; dy < s; dy++)
             {
@@ -333,17 +337,10 @@ namespace CityScape.GridSystem.Road
                     GridCoordinates c = new GridCoordinates(blockOrigin.X + dx, blockOrigin.Y + dy);
                     GridCell cell = gm.GetCell(c);
                     if (cell == null || cell.HasRoad || cell.IsOccupied)
-                        return;  // any blocked cell cancels the whole block
+                        return false; 
                 }
             }
 
-            if (straightRoadPrefab == null)
-            {
-                Debug.LogError("[RoadPlacer] Straight Road Prefab is not assigned!", this);
-                return;
-            }
-
-            // Clear nature and mark all cells in the footprint as road
             for (int dy = 0; dy < s; dy++)
             {
                 for (int dx = 0; dx < s; dx++)
@@ -354,24 +351,14 @@ namespace CityScape.GridSystem.Road
                 }
             }
 
-            // Spawn one prefab at the block centre
-            SpawnOrUpdateRoadTile(blockOrigin, gm);
-
-            // Refresh neighbouring blocks so auto-connect shapes update
-            foreach (GridCoordinates n in RoadTileSelector.GetBlockNeighbours(blockOrigin, s))
-                RefreshNeighbour(n, gm);
-
-            OnRoadPlaced?.Invoke(blockOrigin);
+            return true;
         }
 
         private void TryRemoveRoad(GridCoordinates blockOrigin, GridManager gm)
         {
-            // Find the block: the clicked cell might be anywhere inside it,
-            // but blockOrigin is already snapped so just check its top-left cell.
             GridCell cell = gm.GetCell(blockOrigin);
             if (cell == null || !cell.HasRoad) return;
 
-            // Clear all cells in the footprint
             int s = roadFootprintSize;
             for (int dy = 0; dy < s; dy++)
                 for (int dx = 0; dx < s; dx++)
@@ -405,7 +392,6 @@ namespace CityScape.GridSystem.Road
             RoadTileType type   = RoadTileSelector.Evaluate(blockOrigin, s, gm, out float rotY);
             GameObject   prefab = SelectPrefab(type);
 
-            // Position at the world-space centre of the NxN block
             Vector3    pos = gm.GetFootprintCenter(blockOrigin, s, s) + Vector3.up * roadHeightOffset;
             Quaternion rot = Quaternion.Euler(0f, rotY, 0f);
 
@@ -417,7 +403,6 @@ namespace CityScape.GridSystem.Road
 
         private void RefreshNeighbour(GridCoordinates blockOrigin, GridManager gm)
         {
-            // Only refresh if the top-left cell of this block is a road
             GridCell cell = gm.GetCell(blockOrigin);
             if (cell == null || !cell.HasRoad) return;
             SpawnOrUpdateRoadTile(blockOrigin, gm);
@@ -436,10 +421,6 @@ namespace CityScape.GridSystem.Road
         //  Helpers
         // ─────────────────────────────────────────────
 
-        /// <summary>
-        /// Snaps a raw grid coordinate to the bottom-left corner of the
-        /// NxN block it falls inside (e.g. cell (3,5) with size=2 → block (2,4)).
-        /// </summary>
         private GridCoordinates SnapToBlock(GridCoordinates raw)
         {
             int s = roadFootprintSize;
@@ -448,131 +429,221 @@ namespace CityScape.GridSystem.Road
                 (raw.Y / s) * s);
         }
 
-        // ─────────────────────────────────────────────
-        //  Bresenham Line Fill
-        // ─────────────────────────────────────────────
-
-        /// <summary>
-        /// Yields every grid cell on the line from <paramref name="from"/> to
-        /// <paramref name="to"/> using Bresenham's algorithm.
-        /// Ensures fast mouse drags produce a solid connected road with no gaps.
-        /// </summary>
-        private static IEnumerable<GridCoordinates> BresenhamLine(
-            GridCoordinates from, GridCoordinates to)
+        private GridCoordinates ClampAndSnapToGrid(GridCoordinates raw, GridManager gm)
         {
-            int x0 = from.X, y0 = from.Y;
-            int x1 = to.X,   y1 = to.Y;
-
-            int dx  = Math.Abs(x1 - x0);
-            int dy  = Math.Abs(y1 - y0);
-            int sx  = x0 < x1 ? 1 : -1;
-            int sy  = y0 < y1 ? 1 : -1;
-            int err = dx - dy;
-
-            while (true)
-            {
-                yield return new GridCoordinates(x0, y0);
-                if (x0 == x1 && y0 == y1) break;
-                int e2 = 2 * err;
-                if (e2 > -dy) { err -= dy; x0 += sx; }
-                if (e2 <  dx) { err += dx; y0 += sy; }
-            }
+            int s = roadFootprintSize;
+            int maxX = gm.GridWidth - s;
+            int maxY = gm.GridHeight - s;
+            
+            int clampedX = Mathf.Clamp(raw.X, 0, maxX);
+            int clampedY = Mathf.Clamp(raw.Y, 0, maxY);
+            
+            return SnapToBlock(new GridCoordinates(clampedX, clampedY));
         }
 
         // ─────────────────────────────────────────────
-        //  Hover Highlight
+        //  L-Shape Path
         // ─────────────────────────────────────────────
 
-        private void BuildHoverQuad()
+        private List<GridCoordinates> GetLShapePath(GridCoordinates start, GridCoordinates end)
         {
-            _hoverObj = new GameObject("RoadHoverHighlight");
-            _hoverObj.transform.SetParent(transform, false);
+            List<GridCoordinates> path = new List<GridCoordinates>();
+            int s = roadFootprintSize;
+            
+            int x0 = start.X, y0 = start.Y;
+            int x1 = end.X,   y1 = end.Y;
 
-            var mf = _hoverObj.AddComponent<MeshFilter>();
-            _hoverRenderer = _hoverObj.AddComponent<MeshRenderer>();
-            _hoverRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-            _hoverRenderer.receiveShadows    = false;
+            // Move along X first
+            int stepX = x0 < x1 ? s : -s;
+            for (int x = x0; x != x1; x += stepX)
+            {
+                path.Add(new GridCoordinates(x, y0));
+            }
+            
+            // Add the corner
+            path.Add(new GridCoordinates(x1, y0));
 
-            // Size the quad to cover the full NxN footprint with a small padding
-            float cs  = GridManager.Instance != null ? GridManager.Instance.CellSize : 4f;
+            // Move along Y
+            int stepY = y0 < y1 ? s : -s;
+            for (int y = y0 + stepY; (stepY > 0 ? y <= y1 : y >= y1); y += stepY)
+            {
+                path.Add(new GridCoordinates(x1, y));
+            }
+
+            return path;
+        }
+
+        // ─────────────────────────────────────────────
+        //  Visuals & Previews
+        // ─────────────────────────────────────────────
+
+        private void UpdateHoverVisuals()
+        {
+            GridManager gm = GridManager.Instance;
+            if (gm == null || mouseInteractor == null || !mouseInteractor.HasValidHit)
+            {
+                HideAllGhosts();
+                if (_deleteQuadObj != null) _deleteQuadObj.SetActive(false);
+                return;
+            }
+
+            GridCoordinates rawCell = gm.WorldToGrid(mouseInteractor.LastWorldPosition);
+            GridCoordinates currentBlock = ClampAndSnapToGrid(rawCell, gm);
+
+            // Handle Deletion Quad
+            if (!_isDraggingPlacement)
+            {
+                GridCell cell = gm.GetCell(currentBlock);
+                if (cell != null && cell.HasRoad)
+                {
+                    // Show delete quad over this road
+                    HideAllGhosts();
+                    
+                    if (_deleteQuadObj != null)
+                    {
+                        _deleteQuadObj.SetActive(true);
+                        int s = roadFootprintSize;
+                        Vector3 wp = gm.GetFootprintCenter(currentBlock, s, s);
+                        _deleteQuadObj.transform.position = new Vector3(wp.x, wp.y + 0.04f, wp.z);
+                    }
+                    return;
+                }
+            }
+
+            // Hide delete quad if we are placing or hovering over empty grass
+            if (_deleteQuadObj != null) _deleteQuadObj.SetActive(false);
+
+            // Update Ghosts
+            if (_isDraggingPlacement)
+            {
+                UpdateGhostPreviewPath(_currentPreviewPath, gm);
+            }
+            else
+            {
+                // Just hovering, show single ghost
+                UpdateGhostPreviewPath(new List<GridCoordinates> { currentBlock }, gm);
+            }
+        }
+
+        private void UpdateGhostPreviewPath(List<GridCoordinates> path, GridManager gm)
+        {
+            int s = roadFootprintSize;
+            
+            for (int i = 0; i < _ghostPool.Count; i++)
+            {
+                if (i < path.Count)
+                {
+                    var block = path[i];
+                    Vector3 wp = gm.GetFootprintCenter(block, s, s) + Vector3.up * roadHeightOffset;
+                    
+                    _ghostPool[i].transform.position = wp;
+                    _ghostPool[i].SetActive(true);
+                }
+                else
+                {
+                    _ghostPool[i].SetActive(false);
+                }
+            }
+
+            // Create new ghosts if we need more
+            while (_ghostPool.Count < path.Count)
+            {
+                int i = _ghostPool.Count;
+                var block = path[i];
+                Vector3 wp = gm.GetFootprintCenter(block, s, s) + Vector3.up * roadHeightOffset;
+
+                GameObject newGhost = CreateGhostInstance();
+                newGhost.transform.position = wp;
+                newGhost.SetActive(true);
+                _ghostPool.Add(newGhost);
+            }
+        }
+
+        private GameObject CreateGhostInstance()
+        {
+            if (straightRoadPrefab == null) return new GameObject("EmptyGhost");
+            
+            GameObject ghost = Instantiate(straightRoadPrefab, _ghostContainer);
+            
+            // Strip logic
+            foreach (var col in ghost.GetComponentsInChildren<Collider>()) Destroy(col);
+            foreach (var mono in ghost.GetComponentsInChildren<MonoBehaviour>()) Destroy(mono);
+
+            // Apply material
+            if (hoverHighlightMaterial != null)
+            {
+                foreach (var r in ghost.GetComponentsInChildren<Renderer>())
+                {
+                    var mats = new Material[r.sharedMaterials.Length];
+                    for (int m = 0; m < mats.Length; m++) mats[m] = hoverHighlightMaterial;
+                    r.sharedMaterials = mats;
+                }
+            }
+
+            return ghost;
+        }
+
+        private void HideAllGhosts()
+        {
+            foreach (var g in _ghostPool)
+            {
+                if (g != null) g.SetActive(false);
+            }
+        }
+
+        private void BuildDeleteQuad()
+        {
+            _deleteQuadObj = new GameObject("RoadDeleteHighlight");
+            _deleteQuadObj.transform.SetParent(transform, false);
+
+            var mf = _deleteQuadObj.AddComponent<MeshFilter>();
+            _deleteQuadRenderer = _deleteQuadObj.AddComponent<MeshRenderer>();
+            _deleteQuadRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            _deleteQuadRenderer.receiveShadows = false;
+
+            float cs = GridManager.Instance != null ? GridManager.Instance.CellSize : 4f;
             float size = cs * roadFootprintSize * 0.96f;
-            float h   = size * 0.5f;
+            float h = size * 0.5f;
 
-            var mesh = new Mesh { name = "RoadHover" };
-            mesh.vertices  = new[] {
+            var mesh = new Mesh { name = "RoadDeleteQuad" };
+            mesh.vertices = new[] {
                 new Vector3(-h, 0f, -h), new Vector3(h, 0f, -h),
                 new Vector3( h, 0f,  h), new Vector3(-h, 0f, h)
             };
             mesh.triangles = new[] { 0, 3, 1, 1, 3, 2 };
-            mesh.uv        = new[] {
+            mesh.uv = new[] {
                 new Vector2(0,0), new Vector2(1,0),
                 new Vector2(1,1), new Vector2(0,1)
             };
             mesh.RecalculateNormals();
             mf.sharedMesh = mesh;
 
-            if (hoverHighlightMaterial != null)
-                _hoverRenderer.sharedMaterial = hoverHighlightMaterial;
-
-            _hoverObj.SetActive(false);
-        }
-
-        private void UpdateHoverHighlight()
-        {
-            if (_hoverObj == null) return;
-            if (mouseInteractor == null || !mouseInteractor.HasValidHit)
+            if (deleteHighlightMaterial != null)
             {
-                SetHoverVisible(false);
-                return;
+                _deleteQuadRenderer.sharedMaterial = deleteHighlightMaterial;
+            }
+            else if (hoverHighlightMaterial != null)
+            {
+                Material redMat = new Material(hoverHighlightMaterial);
+                if (redMat.HasProperty("_BaseColor")) redMat.SetColor("_BaseColor", new Color(1f, 0.2f, 0.2f, 0.6f));
+                else if (redMat.HasProperty("_Color")) redMat.SetColor("_Color", new Color(1f, 0.2f, 0.2f, 0.6f));
+                _deleteQuadRenderer.sharedMaterial = redMat;
             }
 
-            GridManager gm = GridManager.Instance;
-            if (gm == null) { SetHoverVisible(false); return; }
-
-            // Snap the hovered cell to the block grid so the highlight
-            // shows exactly where the 2x2 road would be placed.
-            GridCoordinates rawCell    = gm.WorldToGrid(mouseInteractor.LastWorldPosition);
-            GridCoordinates blockOrigin = SnapToBlock(rawCell);
-
-            if (gm.GetCell(blockOrigin) == null) { SetHoverVisible(false); return; }
-
-            // Use the block centre so the quad sits over all NxN cells
-            int     s    = roadFootprintSize;
-            Vector3 wp   = gm.GetFootprintCenter(blockOrigin, s, s);
-            _hoverObj.transform.position = new Vector3(wp.x, wp.y + 0.04f, wp.z);
-            SetHoverVisible(true);
+            _deleteQuadObj.SetActive(false);
         }
-
-        private void SetHoverVisible(bool visible)
-        {
-            if (_hoverObj == null) return;
-            if (_hoverVisible == visible) return;
-            _hoverObj.SetActive(visible);
-            _hoverVisible = visible;
-        }
-
-        // ─────────────────────────────────────────────
-        //  Diagnostics
-        // ─────────────────────────────────────────────
 
         private void LogMissingRefs()
         {
             if (mouseInteractor == null)
-                Debug.LogError("[RoadPlacer] Mouse Interactor is NOT assigned in Inspector. " +
-                               "Drag the MouseWorldInteractor GameObject into the slot.", this);
-
+                Debug.LogError("[RoadPlacer] Mouse Interactor is NOT assigned in Inspector.");
             if (straightRoadPrefab == null)
-                Debug.LogError("[RoadPlacer] Straight Road Prefab is NOT assigned. " +
-                               "Drag MainRoad.prefab into the slot.", this);
-
-            if (cornerRoadPrefab == null)
-                Debug.LogError("[RoadPlacer] Corner Road Prefab is NOT assigned. " +
-                               "Drag CurveTurnRoad.prefab into the slot.", this);
+                Debug.LogError("[RoadPlacer] Straight Road Prefab is NOT assigned.");
         }
 
         private void OnDestroy()
         {
-            if (_hoverObj != null) Destroy(_hoverObj);
+            if (_deleteQuadObj != null) Destroy(_deleteQuadObj);
         }
     }
 }

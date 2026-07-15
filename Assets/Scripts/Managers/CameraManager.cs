@@ -27,8 +27,10 @@ namespace CityScape.Managers
         // ─────────────────────────────────────────────
 
         [Header("Camera References")]
-        [SerializeField] private Camera buildCamera;
-        [SerializeField] private Camera exploreCamera;
+        [Tooltip("The GameObject for the Build Camera (can be a standard Camera or a Cinemachine Virtual Camera).")]
+        [SerializeField] private GameObject buildCamera;
+        [Tooltip("The GameObject for the Explore Camera (can be a standard Camera or a Cinemachine Virtual Camera).")]
+        [SerializeField] private GameObject exploreCamera;
 
         [Header("Starting Mode")]
         [SerializeField] private CameraMode startingMode = CameraMode.Build;
@@ -105,8 +107,8 @@ namespace CityScape.Managers
             if (CurrentMode == mode && !force) return;
             CurrentMode = mode;
 
-            if (buildCamera   != null) buildCamera.gameObject.SetActive(mode == CameraMode.Build);
-            if (exploreCamera != null) exploreCamera.gameObject.SetActive(mode == CameraMode.Explore);
+            if (buildCamera   != null) buildCamera.SetActive(mode == CameraMode.Build);
+            if (exploreCamera != null) exploreCamera.SetActive(mode == CameraMode.Explore);
 
             OnCameraModeChanged?.Invoke(mode);
             Debug.Log($"[CameraManager] Switched to {mode} mode.");
@@ -141,7 +143,7 @@ namespace CityScape.Managers
             }
         }
 
-        private Camera ActiveCamera
+        private GameObject ActiveCamera
             => CurrentMode == CameraMode.Build ? buildCamera : exploreCamera;
     }
 }

@@ -250,6 +250,9 @@ namespace CityScape.GridSystem.Placement
         //  Public API
         // ─────────────────────────────────────────────
 
+        /// <summary>True if a building is currently selected for placement.</summary>
+        public bool HasSelection => _selectedBuilding != null;
+
         /// <summary>
         /// Selects a building type to place. Call this from UI buttons or hotkeys.
         /// Passing the same data again resets the rotation.
@@ -430,8 +433,22 @@ namespace CityScape.GridSystem.Placement
             List<GridCoordinates> cells = _validator.GetOccupiedCells(
                 origin, _selectedBuilding, _rotationStep);
 
-            // Clear any procedurally generated nature (trees/grass) first
-            foreach (GridCoordinates c in cells)
+            // Clear procedurally generated nature (trees/grass) in a slightly expanded area.
+            // This ensures trees from adjacent cells that jittered into this footprint are also destroyed.
+            HashSet<GridCoordinates> cellsToClear = new HashSet<GridCoordinates>(cells);
+            foreach (var c in cells)
+            {
+                cellsToClear.Add(new GridCoordinates(c.X + 1, c.Y));
+                cellsToClear.Add(new GridCoordinates(c.X - 1, c.Y));
+                cellsToClear.Add(new GridCoordinates(c.X, c.Y + 1));
+                cellsToClear.Add(new GridCoordinates(c.X, c.Y - 1));
+                cellsToClear.Add(new GridCoordinates(c.X + 1, c.Y + 1));
+                cellsToClear.Add(new GridCoordinates(c.X - 1, c.Y - 1));
+                cellsToClear.Add(new GridCoordinates(c.X + 1, c.Y - 1));
+                cellsToClear.Add(new GridCoordinates(c.X - 1, c.Y + 1));
+            }
+
+            foreach (GridCoordinates c in cellsToClear)
             {
                 gridManager.ClearNature(c);
             }

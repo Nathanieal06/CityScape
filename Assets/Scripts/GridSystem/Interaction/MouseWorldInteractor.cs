@@ -96,21 +96,47 @@ namespace CityScape.GridSystem.Interaction
         //  Internal
         // ─────────────────────────────────────────────
 
+        private bool _loggedMissingCamera = false;
+
         private bool PerformRaycast(out Vector3 hitPoint)
         {
             hitPoint = Vector3.zero;
 
-            if (raycastCamera == null) return false;
+            Camera activeCam = raycastCamera;
+            if (activeCam == null || !activeCam.gameObject.activeInHierarchy)
+            {
+                activeCam = Camera.main;
+            }
+
+            if (activeCam == null)
+            {
+                if (!_loggedMissingCamera)
+                {
+                    Debug.LogError("[MouseWorldInteractor] Cannot interact with the grid! There is no active Camera tagged as 'MainCamera' in the scene.");
+                    _loggedMissingCamera = true;
+                }
+                return false;
+            }
+            _loggedMissingCamera = false;
 
             // New Input System: read mouse screen position from Mouse.current
             if (Mouse.current == null) return false;
 
             Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
-            Ray ray = raycastCamera.ScreenPointToRay(mouseScreenPos);
+            Ray ray = activeCam.ScreenPointToRay(mouseScreenPos);
 
             if (Physics.Raycast(ray, out RaycastHit hit, maxRaycastDistance, terrainLayerMask))
             {
                 hitPoint = hit.point;
+                return true;
+            }
+            
+            // Fallback: If the user clicked on a building (which might not be on the terrain layer),
+            // the raycast above will miss it and hit the ground behind it, causing deletion to fail.
+            // This fallback catches hits against buildings/anything else.
+            if (Physics.Raycast(ray, out RaycastHit fallbackHit, maxRaycastDistance))
+            {
+                hitPoint = fallbackHit.point;
                 return true;
             }
 

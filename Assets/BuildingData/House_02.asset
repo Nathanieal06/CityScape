@@ -18,8 +18,8 @@ MonoBehaviour:
   icon: {fileID: 0}
   category: 0
   prefab: {fileID: 1264934104862006, guid: 5f4808ea74a764372b965aa467f2ce05, type: 3}
-  footprintWidth: 3
-  footprintHeight: 3
+  footprintWidth: 2
+  footprintHeight: 2
   placementCost: 200
   maintenanceCostPerMin: 5
   incomePerTick: 0
