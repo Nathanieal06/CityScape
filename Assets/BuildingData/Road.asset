@@ -17,7 +17,7 @@ MonoBehaviour:
   description: A building in your city.
   icon: {fileID: 0}
   category: 6
-  prefab: {fileID: 9185021402400554945, guid: 5299f87befe8b184e94d24bd69ccfbbd, type: 3}
+  prefab: {fileID: 2011908840396617894, guid: fad37e137ce017341a8d4a1b18320dca, type: 3}
   footprintWidth: 4
   footprintHeight: 4
   placementCost: 150

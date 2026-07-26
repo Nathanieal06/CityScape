@@ -21,7 +21,9 @@ namespace CityScape.GridSystem.Road
         [SerializeField] private GameObject straightRoadPrefab;
         [SerializeField] private GameObject cornerRoadPrefab;
         [SerializeField] private GameObject tJunctionRoadPrefab;
-        [SerializeField] private GameObject crossRoadPrefab;
+        [Tooltip("Used when four roads connect. Assign a crossroad or circular roundabout prefab here.")]
+        [UnityEngine.Serialization.FormerlySerializedAs("crossRoadPrefab")]
+        [SerializeField] private GameObject fourWayIntersectionPrefab;
         [SerializeField] private GameObject deadEndRoadPrefab;
 
         [Header("Placement Settings")]
@@ -412,7 +414,7 @@ namespace CityScape.GridSystem.Road
         {
             RoadTileType.Corner    => cornerRoadPrefab    ?? straightRoadPrefab,
             RoadTileType.TJunction => tJunctionRoadPrefab ?? straightRoadPrefab,
-            RoadTileType.Cross     => crossRoadPrefab     ?? straightRoadPrefab,
+            RoadTileType.Cross     => fourWayIntersectionPrefab ?? straightRoadPrefab,
             RoadTileType.DeadEnd   => deadEndRoadPrefab   ?? straightRoadPrefab,
             _                      => straightRoadPrefab,
         };

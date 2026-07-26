@@ -35,5 +35,5 @@ MonoBehaviour:
   requiresPower: 0
   unlockRequirement: 
   buildTimeSeconds: 0
-  placementOffset: {x: 0, y: 0, z: 0}
+  placementOffset: {x: 0, y: 0.2, z: 0}
   debugShowFootprint: 0
