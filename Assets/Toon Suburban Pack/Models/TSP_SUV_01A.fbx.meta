@@ -1,76 +1,206 @@
 fileFormatVersion: 2
 guid: 37d92bdba21bf6c4daf7977b6aebb0ef
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: TSP_SUV_01A_Body
-    100004: TSP_SUV_01A_Door_F.L
-    100006: TSP_SUV_01A_Door_F.R
-    100008: TSP_SUV_01A_Door_R.L
-    100010: TSP_SUV_01A_Door_R.R
-    100012: TSP_SUV_01A_Lights
-    100014: TSP_SUV_01A_Steering_Wheel
-    100016: TSP_SUV_01A_Trunk
-    100018: TSP_SUV_01A_Wheel_F.L
-    100020: TSP_SUV_01A_Wheel_F.R
-    100022: TSP_SUV_01A_Wheel_R.L
-    100024: TSP_SUV_01A_Wheel_R.R
-    400000: //RootNode
-    400002: TSP_SUV_01A_Body
-    400004: TSP_SUV_01A_Door_F.L
-    400006: TSP_SUV_01A_Door_F.R
-    400008: TSP_SUV_01A_Door_R.L
-    400010: TSP_SUV_01A_Door_R.R
-    400012: TSP_SUV_01A_Lights
-    400014: TSP_SUV_01A_Steering_Wheel
-    400016: TSP_SUV_01A_Trunk
-    400018: TSP_SUV_01A_Wheel_F.L
-    400020: TSP_SUV_01A_Wheel_F.R
-    400022: TSP_SUV_01A_Wheel_R.L
-    400024: TSP_SUV_01A_Wheel_R.R
-    2100000: Atlas_1A_D
-    2100002: Glass_Vehicles_01A_D
-    2100004: Atlas_Lights_1A_D
-    2300000: TSP_SUV_01A_Body
-    2300002: TSP_SUV_01A_Door_F.L
-    2300004: TSP_SUV_01A_Door_F.R
-    2300006: TSP_SUV_01A_Door_R.L
-    2300008: TSP_SUV_01A_Door_R.R
-    2300010: TSP_SUV_01A_Lights
-    2300012: TSP_SUV_01A_Steering_Wheel
-    2300014: TSP_SUV_01A_Trunk
-    2300016: TSP_SUV_01A_Wheel_F.L
-    2300018: TSP_SUV_01A_Wheel_F.R
-    2300020: TSP_SUV_01A_Wheel_R.L
-    2300022: TSP_SUV_01A_Wheel_R.R
-    3300000: TSP_SUV_01A_Body
-    3300002: TSP_SUV_01A_Door_F.L
-    3300004: TSP_SUV_01A_Door_F.R
-    3300006: TSP_SUV_01A_Door_R.L
-    3300008: TSP_SUV_01A_Door_R.R
-    3300010: TSP_SUV_01A_Lights
-    3300012: TSP_SUV_01A_Steering_Wheel
-    3300014: TSP_SUV_01A_Trunk
-    3300016: TSP_SUV_01A_Wheel_F.L
-    3300018: TSP_SUV_01A_Wheel_F.R
-    3300020: TSP_SUV_01A_Wheel_R.L
-    3300022: TSP_SUV_01A_Wheel_R.R
-    4300000: TSP_SUV_01A_Door_R.L
-    4300002: TSP_SUV_01A_Door_R.R
-    4300004: TSP_SUV_01A_Door_F.L
-    4300006: TSP_SUV_01A_Door_F.R
-    4300008: TSP_SUV_01A_Trunk
-    4300010: TSP_SUV_01A_Steering_Wheel
-    4300012: TSP_SUV_01A_Wheel_F.R
-    4300014: TSP_SUV_01A_Wheel_F.L
-    4300016: TSP_SUV_01A_Wheel_R.R
-    4300018: TSP_SUV_01A_Body
-    4300020: TSP_SUV_01A_Wheel_R.L
-    4300022: TSP_SUV_01A_Lights
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: TSP_SUV_01A_Body
+  - first:
+      1: 100004
+    second: TSP_SUV_01A_Door_F.L
+  - first:
+      1: 100006
+    second: TSP_SUV_01A_Door_F.R
+  - first:
+      1: 100008
+    second: TSP_SUV_01A_Door_R.L
+  - first:
+      1: 100010
+    second: TSP_SUV_01A_Door_R.R
+  - first:
+      1: 100012
+    second: TSP_SUV_01A_Lights
+  - first:
+      1: 100014
+    second: TSP_SUV_01A_Steering_Wheel
+  - first:
+      1: 100016
+    second: TSP_SUV_01A_Trunk
+  - first:
+      1: 100018
+    second: TSP_SUV_01A_Wheel_F.L
+  - first:
+      1: 100020
+    second: TSP_SUV_01A_Wheel_F.R
+  - first:
+      1: 100022
+    second: TSP_SUV_01A_Wheel_R.L
+  - first:
+      1: 100024
+    second: TSP_SUV_01A_Wheel_R.R
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: TSP_SUV_01A_Body
+  - first:
+      4: 400004
+    second: TSP_SUV_01A_Door_F.L
+  - first:
+      4: 400006
+    second: TSP_SUV_01A_Door_F.R
+  - first:
+      4: 400008
+    second: TSP_SUV_01A_Door_R.L
+  - first:
+      4: 400010
+    second: TSP_SUV_01A_Door_R.R
+  - first:
+      4: 400012
+    second: TSP_SUV_01A_Lights
+  - first:
+      4: 400014
+    second: TSP_SUV_01A_Steering_Wheel
+  - first:
+      4: 400016
+    second: TSP_SUV_01A_Trunk
+  - first:
+      4: 400018
+    second: TSP_SUV_01A_Wheel_F.L
+  - first:
+      4: 400020
+    second: TSP_SUV_01A_Wheel_F.R
+  - first:
+      4: 400022
+    second: TSP_SUV_01A_Wheel_R.L
+  - first:
+      4: 400024
+    second: TSP_SUV_01A_Wheel_R.R
+  - first:
+      21: 2100000
+    second: Atlas_1A_D
+  - first:
+      21: 2100002
+    second: Glass_Vehicles_01A_D
+  - first:
+      21: 2100004
+    second: Atlas_Lights_1A_D
+  - first:
+      23: 2300000
+    second: TSP_SUV_01A_Body
+  - first:
+      23: 2300002
+    second: TSP_SUV_01A_Door_F.L
+  - first:
+      23: 2300004
+    second: TSP_SUV_01A_Door_F.R
+  - first:
+      23: 2300006
+    second: TSP_SUV_01A_Door_R.L
+  - first:
+      23: 2300008
+    second: TSP_SUV_01A_Door_R.R
+  - first:
+      23: 2300010
+    second: TSP_SUV_01A_Lights
+  - first:
+      23: 2300012
+    second: TSP_SUV_01A_Steering_Wheel
+  - first:
+      23: 2300014
+    second: TSP_SUV_01A_Trunk
+  - first:
+      23: 2300016
+    second: TSP_SUV_01A_Wheel_F.L
+  - first:
+      23: 2300018
+    second: TSP_SUV_01A_Wheel_F.R
+  - first:
+      23: 2300020
+    second: TSP_SUV_01A_Wheel_R.L
+  - first:
+      23: 2300022
+    second: TSP_SUV_01A_Wheel_R.R
+  - first:
+      33: 3300000
+    second: TSP_SUV_01A_Body
+  - first:
+      33: 3300002
+    second: TSP_SUV_01A_Door_F.L
+  - first:
+      33: 3300004
+    second: TSP_SUV_01A_Door_F.R
+  - first:
+      33: 3300006
+    second: TSP_SUV_01A_Door_R.L
+  - first:
+      33: 3300008
+    second: TSP_SUV_01A_Door_R.R
+  - first:
+      33: 3300010
+    second: TSP_SUV_01A_Lights
+  - first:
+      33: 3300012
+    second: TSP_SUV_01A_Steering_Wheel
+  - first:
+      33: 3300014
+    second: TSP_SUV_01A_Trunk
+  - first:
+      33: 3300016
+    second: TSP_SUV_01A_Wheel_F.L
+  - first:
+      33: 3300018
+    second: TSP_SUV_01A_Wheel_F.R
+  - first:
+      33: 3300020
+    second: TSP_SUV_01A_Wheel_R.L
+  - first:
+      33: 3300022
+    second: TSP_SUV_01A_Wheel_R.R
+  - first:
+      43: 4300000
+    second: TSP_SUV_01A_Door_R.L
+  - first:
+      43: 4300002
+    second: TSP_SUV_01A_Door_R.R
+  - first:
+      43: 4300004
+    second: TSP_SUV_01A_Door_F.L
+  - first:
+      43: 4300006
+    second: TSP_SUV_01A_Door_F.R
+  - first:
+      43: 4300008
+    second: TSP_SUV_01A_Trunk
+  - first:
+      43: 4300010
+    second: TSP_SUV_01A_Steering_Wheel
+  - first:
+      43: 4300012
+    second: TSP_SUV_01A_Wheel_F.R
+  - first:
+      43: 4300014
+    second: TSP_SUV_01A_Wheel_F.L
+  - first:
+      43: 4300016
+    second: TSP_SUV_01A_Wheel_R.R
+  - first:
+      43: 4300018
+    second: TSP_SUV_01A_Body
+  - first:
+      43: 4300020
+    second: TSP_SUV_01A_Wheel_R.L
+  - first:
+      43: 4300022
+    second: TSP_SUV_01A_Lights
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -79,9 +209,8 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -96,32 +225,46 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -130,10 +273,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -143,13 +286,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -1,58 +1,158 @@
 fileFormatVersion: 2
 guid: ee323c3d354074d40aa6e0979d80c979
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: TSP_TV_Stand_01A_Sliding_Door_01
-    100004: TSP_TV_Stand_01A_Sliding_Door_02
-    100006: TSP_TV_Stand_01A_Sliding_Door_03
-    100008: TSP_TV_Stand_01A_Sliding_Door_04
-    100010: TSP_TV_Stand_01A_Door.L_1
-    100012: TSP_TV_Stand_01A_Door.L_2
-    100014: TSP_TV_Stand_01A_Door.R_1
-    100016: TSP_TV_Stand_01A_Door.R_2
-    400000: //RootNode
-    400002: TSP_TV_Stand_01A_Sliding_Door_01
-    400004: TSP_TV_Stand_01A_Sliding_Door_02
-    400006: TSP_TV_Stand_01A_Sliding_Door_03
-    400008: TSP_TV_Stand_01A_Sliding_Door_04
-    400010: TSP_TV_Stand_01A_Door.L_1
-    400012: TSP_TV_Stand_01A_Door.L_2
-    400014: TSP_TV_Stand_01A_Door.R_1
-    400016: TSP_TV_Stand_01A_Door.R_2
-    2100000: 'Material #965'
-    2100002: 'Material #674'
-    2100004: 'Material #673'
-    2100006: 'Material #676'
-    2100008: 'Material #675'
-    2300000: //RootNode
-    2300002: TSP_TV_Stand_01A_Sliding_Door_01
-    2300004: TSP_TV_Stand_01A_Sliding_Door_02
-    2300006: TSP_TV_Stand_01A_Sliding_Door_03
-    2300008: TSP_TV_Stand_01A_Sliding_Door_04
-    2300010: TSP_TV_Stand_01A_Door.L_1
-    2300012: TSP_TV_Stand_01A_Door.L_2
-    2300014: TSP_TV_Stand_01A_Door.R_1
-    2300016: TSP_TV_Stand_01A_Door.R_2
-    3300000: //RootNode
-    3300002: TSP_TV_Stand_01A_Sliding_Door_01
-    3300004: TSP_TV_Stand_01A_Sliding_Door_02
-    3300006: TSP_TV_Stand_01A_Sliding_Door_03
-    3300008: TSP_TV_Stand_01A_Sliding_Door_04
-    3300010: TSP_TV_Stand_01A_Door.L_1
-    3300012: TSP_TV_Stand_01A_Door.L_2
-    3300014: TSP_TV_Stand_01A_Door.R_1
-    3300016: TSP_TV_Stand_01A_Door.R_2
-    4300000: TSP_TV_Stand_01A
-    4300002: TSP_TV_Stand_01A_Sliding_Door_01
-    4300004: TSP_TV_Stand_01A_Sliding_Door_02
-    4300006: TSP_TV_Stand_01A_Sliding_Door_03
-    4300008: TSP_TV_Stand_01A_Sliding_Door_04
-    4300010: TSP_TV_Stand_01A_Door.R_2
-    4300012: TSP_TV_Stand_01A_Door.L_2
-    4300014: TSP_TV_Stand_01A_Door.L_1
-    4300016: TSP_TV_Stand_01A_Door.R_1
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: TSP_TV_Stand_01A_Sliding_Door_01
+  - first:
+      1: 100004
+    second: TSP_TV_Stand_01A_Sliding_Door_02
+  - first:
+      1: 100006
+    second: TSP_TV_Stand_01A_Sliding_Door_03
+  - first:
+      1: 100008
+    second: TSP_TV_Stand_01A_Sliding_Door_04
+  - first:
+      1: 100010
+    second: TSP_TV_Stand_01A_Door.L_1
+  - first:
+      1: 100012
+    second: TSP_TV_Stand_01A_Door.L_2
+  - first:
+      1: 100014
+    second: TSP_TV_Stand_01A_Door.R_1
+  - first:
+      1: 100016
+    second: TSP_TV_Stand_01A_Door.R_2
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: TSP_TV_Stand_01A_Sliding_Door_01
+  - first:
+      4: 400004
+    second: TSP_TV_Stand_01A_Sliding_Door_02
+  - first:
+      4: 400006
+    second: TSP_TV_Stand_01A_Sliding_Door_03
+  - first:
+      4: 400008
+    second: TSP_TV_Stand_01A_Sliding_Door_04
+  - first:
+      4: 400010
+    second: TSP_TV_Stand_01A_Door.L_1
+  - first:
+      4: 400012
+    second: TSP_TV_Stand_01A_Door.L_2
+  - first:
+      4: 400014
+    second: TSP_TV_Stand_01A_Door.R_1
+  - first:
+      4: 400016
+    second: TSP_TV_Stand_01A_Door.R_2
+  - first:
+      21: 2100000
+    second: Material #965
+  - first:
+      21: 2100002
+    second: Material #674
+  - first:
+      21: 2100004
+    second: Material #673
+  - first:
+      21: 2100006
+    second: Material #676
+  - first:
+      21: 2100008
+    second: Material #675
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: TSP_TV_Stand_01A_Sliding_Door_01
+  - first:
+      23: 2300004
+    second: TSP_TV_Stand_01A_Sliding_Door_02
+  - first:
+      23: 2300006
+    second: TSP_TV_Stand_01A_Sliding_Door_03
+  - first:
+      23: 2300008
+    second: TSP_TV_Stand_01A_Sliding_Door_04
+  - first:
+      23: 2300010
+    second: TSP_TV_Stand_01A_Door.L_1
+  - first:
+      23: 2300012
+    second: TSP_TV_Stand_01A_Door.L_2
+  - first:
+      23: 2300014
+    second: TSP_TV_Stand_01A_Door.R_1
+  - first:
+      23: 2300016
+    second: TSP_TV_Stand_01A_Door.R_2
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: TSP_TV_Stand_01A_Sliding_Door_01
+  - first:
+      33: 3300004
+    second: TSP_TV_Stand_01A_Sliding_Door_02
+  - first:
+      33: 3300006
+    second: TSP_TV_Stand_01A_Sliding_Door_03
+  - first:
+      33: 3300008
+    second: TSP_TV_Stand_01A_Sliding_Door_04
+  - first:
+      33: 3300010
+    second: TSP_TV_Stand_01A_Door.L_1
+  - first:
+      33: 3300012
+    second: TSP_TV_Stand_01A_Door.L_2
+  - first:
+      33: 3300014
+    second: TSP_TV_Stand_01A_Door.R_1
+  - first:
+      33: 3300016
+    second: TSP_TV_Stand_01A_Door.R_2
+  - first:
+      43: 4300000
+    second: TSP_TV_Stand_01A
+  - first:
+      43: 4300002
+    second: TSP_TV_Stand_01A_Sliding_Door_01
+  - first:
+      43: 4300004
+    second: TSP_TV_Stand_01A_Sliding_Door_02
+  - first:
+      43: 4300006
+    second: TSP_TV_Stand_01A_Sliding_Door_03
+  - first:
+      43: 4300008
+    second: TSP_TV_Stand_01A_Sliding_Door_04
+  - first:
+      43: 4300010
+    second: TSP_TV_Stand_01A_Door.R_2
+  - first:
+      43: 4300012
+    second: TSP_TV_Stand_01A_Door.L_2
+  - first:
+      43: 4300014
+    second: TSP_TV_Stand_01A_Door.L_1
+  - first:
+      43: 4300016
+    second: TSP_TV_Stand_01A_Door.R_1
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -62,30 +162,30 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #673'
+      name: Material #673
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #674'
+      name: Material #674
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #675'
+      name: Material #675
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #676'
+      name: Material #676
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #965'
+      name: Material #965
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -94,9 +194,8 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -111,32 +210,46 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -145,10 +258,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -158,13 +271,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

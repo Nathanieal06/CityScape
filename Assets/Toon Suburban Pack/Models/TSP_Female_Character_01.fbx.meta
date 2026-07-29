@@ -1,214 +1,626 @@
 fileFormatVersion: 2
 guid: fb3778e48db6f1b46982e56bf796977b
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Ankle_IK.L
-    100002: Ankle_IK.R
-    100004: Arm.L
-    100006: Arm.R
-    100008: Clavicle.L
-    100010: Clavicle.R
-    100012: Elbow_IK.L
-    100014: Elbow_IK.R
-    100016: Female_Armature
-    100018: Female_Hairstyles
-    100020: Female_Hats
-    100022: Fingers.L
-    100024: Fingers.R
-    100026: Fingertips.L
-    100028: Fingertips.R
-    100030: Foot.L
-    100032: Foot.R
-    100034: Forearm.L
-    100036: Forearm.R
-    100038: Hand.L
-    100040: Hand.R
-    100042: Head
-    100044: Hips
-    100046: Knee_IK.L
-    100048: Knee_IK.R
-    100050: Neck
-    100052: Quad.L
-    100054: Quad.R
-    100056: Root
-    100058: Shin.L
-    100060: Shin.R
-    100062: Spine_01
-    100064: Spine_02
-    100066: Spine_03
-    100068: Thumb.L
-    100070: Thumb.R
-    100072: Thumb_Tip.L
-    100074: Thumb_Tip.R
-    100076: Toes.L
-    100078: Toes.R
-    100080: TSP_Female_Body_01A
-    100082: TSP_Female_Body_01B
-    100084: TSP_Female_Body_01C
-    100086: //RootNode
-    100088: TSP_Female_Hair_01A
-    100090: TSP_Female_Hair_01B
-    100092: TSP_Female_Hair_01C
-    100094: TSP_Female_Helmet_01A
-    100096: TSP_Female_Helmet_01B
-    100098: TSP_Female_Helmet_01C
-    100100: TSP_Female_Jacket_01A
-    100102: TSP_Female_Jacket_01B
-    100104: TSP_Female_Jacket_01C
-    100106: TSP_Female_Shirt_01A
-    100108: TSP_Female_Shirt_01B
-    100110: TSP_Female_Shirt_01C
-    100112: TSP_Female_Shoes_01A
-    100114: TSP_Female_Shoes_01B
-    100116: TSP_Female_Shoes_01C
-    100118: TSP_Female_Skirt_01A
-    100120: TSP_Female_Skirt_01B
-    100122: TSP_Female_Skirt_01C
-    100124: Wrist_IK.L
-    100126: Wrist_IK.R
-    400000: Ankle_IK.L
-    400002: Ankle_IK.R
-    400004: Arm.L
-    400006: Arm.R
-    400008: Clavicle.L
-    400010: Clavicle.R
-    400012: Elbow_IK.L
-    400014: Elbow_IK.R
-    400016: Female_Armature
-    400018: Female_Hairstyles
-    400020: Female_Hats
-    400022: Fingers.L
-    400024: Fingers.R
-    400026: Fingertips.L
-    400028: Fingertips.R
-    400030: Foot.L
-    400032: Foot.R
-    400034: Forearm.L
-    400036: Forearm.R
-    400038: Hand.L
-    400040: Hand.R
-    400042: Head
-    400044: Hips
-    400046: Knee_IK.L
-    400048: Knee_IK.R
-    400050: Neck
-    400052: Quad.L
-    400054: Quad.R
-    400056: Root
-    400058: Shin.L
-    400060: Shin.R
-    400062: Spine_01
-    400064: Spine_02
-    400066: Spine_03
-    400068: Thumb.L
-    400070: Thumb.R
-    400072: Thumb_Tip.L
-    400074: Thumb_Tip.R
-    400076: Toes.L
-    400078: Toes.R
-    400080: TSP_Female_Body_01A
-    400082: TSP_Female_Body_01B
-    400084: TSP_Female_Body_01C
-    400086: //RootNode
-    400088: TSP_Female_Hair_01A
-    400090: TSP_Female_Hair_01B
-    400092: TSP_Female_Hair_01C
-    400094: TSP_Female_Helmet_01A
-    400096: TSP_Female_Helmet_01B
-    400098: TSP_Female_Helmet_01C
-    400100: TSP_Female_Jacket_01A
-    400102: TSP_Female_Jacket_01B
-    400104: TSP_Female_Jacket_01C
-    400106: TSP_Female_Shirt_01A
-    400108: TSP_Female_Shirt_01B
-    400110: TSP_Female_Shirt_01C
-    400112: TSP_Female_Shoes_01A
-    400114: TSP_Female_Shoes_01B
-    400116: TSP_Female_Shoes_01C
-    400118: TSP_Female_Skirt_01A
-    400120: TSP_Female_Skirt_01B
-    400122: TSP_Female_Skirt_01C
-    400124: Wrist_IK.L
-    400126: Wrist_IK.R
-    2100000: Atlas_1A_D
-    4300000: TSP_Female_Helmet_01C
-    4300002: TSP_Female_Helmet_01B
-    4300004: TSP_Female_Helmet_01A
-    4300006: TSP_Female_Hair_01C
-    4300008: TSP_Female_Hair_01B
-    4300010: TSP_Female_Hair_01A
-    4300012: TSP_Female_Shoes_01C
-    4300014: TSP_Female_Skirt_01C
-    4300016: TSP_Female_Body_01C
-    4300018: TSP_Female_Shirt_01C
-    4300020: TSP_Female_Jacket_01C
-    4300022: TSP_Female_Jacket_01B
-    4300024: TSP_Female_Shirt_01B
-    4300026: TSP_Female_Body_01B
-    4300028: TSP_Female_Skirt_01B
-    4300030: TSP_Female_Shoes_01B
-    4300032: TSP_Female_Shoes_01A
-    4300034: TSP_Female_Jacket_01A
-    4300036: TSP_Female_Skirt_01A
-    4300038: TSP_Female_Body_01A
-    4300040: TSP_Female_Shirt_01A
-    7400000: TH_Female_Pose_01
-    7400002: Female_Armature|1
-    7400004: Female_Armature|TCP_Female_T_Pose
-    7400006: Female_Armature|TCP_Male_Idle_01
-    7400008: Female_Armature|TH_Female_Pose_01
-    7400010: Female_Armature|TH_Female_Pose_02
-    7400012: Female_Armature|TH_Female_Pose_03
-    7400014: Female_Armature|TH_Female_Pose_Signal
-    7400016: Female_Armature|TH_Female_Pose_Sitting_01
-    7400018: Female_Armature|TH_Female_Pose_Sitting_02
-    7400020: Female_Armature|TH_Male_Pose_01
-    7400022: Female_Armature|TH_Male_Pose_02
-    7400024: Female_Armature|TH_Male_Pose_03
-    7400026: Female_Armature|TH_Male_Pose_Signal_01
-    7400028: Female_Armature|TH_Male_Pose_Signal_02
-    7400030: Female_Armature|TH_Male_Pose_Sitting_01
-    7400032: Female_Armature|TH_Male_Pose_Sitting_02
-    7400034: Female_Armature|TH_Male_T_Pose
-    7400036: Female_Armature|TSP_Female_Pose_01
-    7400038: Female_Armature|TSP_Female_Pose_02
-    7400040: Female_Armature|TSP_Female_Pose_03
-    7400042: Female_Armature|TSP_Female_Pose_Signal
-    7400044: Female_Armature|TSP_Female_Pose_Sitting_01
-    7400046: Female_Armature|TSP_Female_Pose_Sitting_02
-    7400048: Female_Armature|TSP_Female_T_Pose
-    7400050: Female_Armature|TSP_Male_Idle_01
-    7400052: Female_Armature|TSP_Male_Pose_01
-    7400054: Female_Armature|TSP_Male_Pose_02
-    7400056: Female_Armature|TSP_Male_Pose_03
-    7400058: Female_Armature|TSP_Male_Pose_Signal_01
-    7400060: Female_Armature|TSP_Male_Pose_Signal_02
-    7400062: Female_Armature|TSP_Male_Pose_Sitting_01
-    7400064: Female_Armature|TSP_Male_Pose_Sitting_02
-    7400066: Female_Armature|TSP_Male_T_Pose
-    9500000: //RootNode
-    13700000: TSP_Female_Body_01A
-    13700002: TSP_Female_Body_01B
-    13700004: TSP_Female_Body_01C
-    13700006: TSP_Female_Hair_01A
-    13700008: TSP_Female_Hair_01B
-    13700010: TSP_Female_Hair_01C
-    13700012: TSP_Female_Helmet_01A
-    13700014: TSP_Female_Helmet_01B
-    13700016: TSP_Female_Helmet_01C
-    13700018: TSP_Female_Jacket_01A
-    13700020: TSP_Female_Jacket_01B
-    13700022: TSP_Female_Jacket_01C
-    13700024: TSP_Female_Shirt_01A
-    13700026: TSP_Female_Shirt_01B
-    13700028: TSP_Female_Shirt_01C
-    13700030: TSP_Female_Shoes_01A
-    13700032: TSP_Female_Shoes_01B
-    13700034: TSP_Female_Shoes_01C
-    13700036: TSP_Female_Skirt_01A
-    13700038: TSP_Female_Skirt_01B
-    13700040: TSP_Female_Skirt_01C
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Ankle_IK.L
+  - first:
+      1: 100002
+    second: Ankle_IK.R
+  - first:
+      1: 100004
+    second: Arm.L
+  - first:
+      1: 100006
+    second: Arm.R
+  - first:
+      1: 100008
+    second: Clavicle.L
+  - first:
+      1: 100010
+    second: Clavicle.R
+  - first:
+      1: 100012
+    second: Elbow_IK.L
+  - first:
+      1: 100014
+    second: Elbow_IK.R
+  - first:
+      1: 100016
+    second: Female_Armature
+  - first:
+      1: 100018
+    second: Female_Hairstyles
+  - first:
+      1: 100020
+    second: Female_Hats
+  - first:
+      1: 100022
+    second: Fingers.L
+  - first:
+      1: 100024
+    second: Fingers.R
+  - first:
+      1: 100026
+    second: Fingertips.L
+  - first:
+      1: 100028
+    second: Fingertips.R
+  - first:
+      1: 100030
+    second: Foot.L
+  - first:
+      1: 100032
+    second: Foot.R
+  - first:
+      1: 100034
+    second: Forearm.L
+  - first:
+      1: 100036
+    second: Forearm.R
+  - first:
+      1: 100038
+    second: Hand.L
+  - first:
+      1: 100040
+    second: Hand.R
+  - first:
+      1: 100042
+    second: Head
+  - first:
+      1: 100044
+    second: Hips
+  - first:
+      1: 100046
+    second: Knee_IK.L
+  - first:
+      1: 100048
+    second: Knee_IK.R
+  - first:
+      1: 100050
+    second: Neck
+  - first:
+      1: 100052
+    second: Quad.L
+  - first:
+      1: 100054
+    second: Quad.R
+  - first:
+      1: 100056
+    second: Root
+  - first:
+      1: 100058
+    second: Shin.L
+  - first:
+      1: 100060
+    second: Shin.R
+  - first:
+      1: 100062
+    second: Spine_01
+  - first:
+      1: 100064
+    second: Spine_02
+  - first:
+      1: 100066
+    second: Spine_03
+  - first:
+      1: 100068
+    second: Thumb.L
+  - first:
+      1: 100070
+    second: Thumb.R
+  - first:
+      1: 100072
+    second: Thumb_Tip.L
+  - first:
+      1: 100074
+    second: Thumb_Tip.R
+  - first:
+      1: 100076
+    second: Toes.L
+  - first:
+      1: 100078
+    second: Toes.R
+  - first:
+      1: 100080
+    second: TSP_Female_Body_01A
+  - first:
+      1: 100082
+    second: TSP_Female_Body_01B
+  - first:
+      1: 100084
+    second: TSP_Female_Body_01C
+  - first:
+      1: 100086
+    second: //RootNode
+  - first:
+      1: 100088
+    second: TSP_Female_Hair_01A
+  - first:
+      1: 100090
+    second: TSP_Female_Hair_01B
+  - first:
+      1: 100092
+    second: TSP_Female_Hair_01C
+  - first:
+      1: 100094
+    second: TSP_Female_Helmet_01A
+  - first:
+      1: 100096
+    second: TSP_Female_Helmet_01B
+  - first:
+      1: 100098
+    second: TSP_Female_Helmet_01C
+  - first:
+      1: 100100
+    second: TSP_Female_Jacket_01A
+  - first:
+      1: 100102
+    second: TSP_Female_Jacket_01B
+  - first:
+      1: 100104
+    second: TSP_Female_Jacket_01C
+  - first:
+      1: 100106
+    second: TSP_Female_Shirt_01A
+  - first:
+      1: 100108
+    second: TSP_Female_Shirt_01B
+  - first:
+      1: 100110
+    second: TSP_Female_Shirt_01C
+  - first:
+      1: 100112
+    second: TSP_Female_Shoes_01A
+  - first:
+      1: 100114
+    second: TSP_Female_Shoes_01B
+  - first:
+      1: 100116
+    second: TSP_Female_Shoes_01C
+  - first:
+      1: 100118
+    second: TSP_Female_Skirt_01A
+  - first:
+      1: 100120
+    second: TSP_Female_Skirt_01B
+  - first:
+      1: 100122
+    second: TSP_Female_Skirt_01C
+  - first:
+      1: 100124
+    second: Wrist_IK.L
+  - first:
+      1: 100126
+    second: Wrist_IK.R
+  - first:
+      4: 400000
+    second: Ankle_IK.L
+  - first:
+      4: 400002
+    second: Ankle_IK.R
+  - first:
+      4: 400004
+    second: Arm.L
+  - first:
+      4: 400006
+    second: Arm.R
+  - first:
+      4: 400008
+    second: Clavicle.L
+  - first:
+      4: 400010
+    second: Clavicle.R
+  - first:
+      4: 400012
+    second: Elbow_IK.L
+  - first:
+      4: 400014
+    second: Elbow_IK.R
+  - first:
+      4: 400016
+    second: Female_Armature
+  - first:
+      4: 400018
+    second: Female_Hairstyles
+  - first:
+      4: 400020
+    second: Female_Hats
+  - first:
+      4: 400022
+    second: Fingers.L
+  - first:
+      4: 400024
+    second: Fingers.R
+  - first:
+      4: 400026
+    second: Fingertips.L
+  - first:
+      4: 400028
+    second: Fingertips.R
+  - first:
+      4: 400030
+    second: Foot.L
+  - first:
+      4: 400032
+    second: Foot.R
+  - first:
+      4: 400034
+    second: Forearm.L
+  - first:
+      4: 400036
+    second: Forearm.R
+  - first:
+      4: 400038
+    second: Hand.L
+  - first:
+      4: 400040
+    second: Hand.R
+  - first:
+      4: 400042
+    second: Head
+  - first:
+      4: 400044
+    second: Hips
+  - first:
+      4: 400046
+    second: Knee_IK.L
+  - first:
+      4: 400048
+    second: Knee_IK.R
+  - first:
+      4: 400050
+    second: Neck
+  - first:
+      4: 400052
+    second: Quad.L
+  - first:
+      4: 400054
+    second: Quad.R
+  - first:
+      4: 400056
+    second: Root
+  - first:
+      4: 400058
+    second: Shin.L
+  - first:
+      4: 400060
+    second: Shin.R
+  - first:
+      4: 400062
+    second: Spine_01
+  - first:
+      4: 400064
+    second: Spine_02
+  - first:
+      4: 400066
+    second: Spine_03
+  - first:
+      4: 400068
+    second: Thumb.L
+  - first:
+      4: 400070
+    second: Thumb.R
+  - first:
+      4: 400072
+    second: Thumb_Tip.L
+  - first:
+      4: 400074
+    second: Thumb_Tip.R
+  - first:
+      4: 400076
+    second: Toes.L
+  - first:
+      4: 400078
+    second: Toes.R
+  - first:
+      4: 400080
+    second: TSP_Female_Body_01A
+  - first:
+      4: 400082
+    second: TSP_Female_Body_01B
+  - first:
+      4: 400084
+    second: TSP_Female_Body_01C
+  - first:
+      4: 400086
+    second: //RootNode
+  - first:
+      4: 400088
+    second: TSP_Female_Hair_01A
+  - first:
+      4: 400090
+    second: TSP_Female_Hair_01B
+  - first:
+      4: 400092
+    second: TSP_Female_Hair_01C
+  - first:
+      4: 400094
+    second: TSP_Female_Helmet_01A
+  - first:
+      4: 400096
+    second: TSP_Female_Helmet_01B
+  - first:
+      4: 400098
+    second: TSP_Female_Helmet_01C
+  - first:
+      4: 400100
+    second: TSP_Female_Jacket_01A
+  - first:
+      4: 400102
+    second: TSP_Female_Jacket_01B
+  - first:
+      4: 400104
+    second: TSP_Female_Jacket_01C
+  - first:
+      4: 400106
+    second: TSP_Female_Shirt_01A
+  - first:
+      4: 400108
+    second: TSP_Female_Shirt_01B
+  - first:
+      4: 400110
+    second: TSP_Female_Shirt_01C
+  - first:
+      4: 400112
+    second: TSP_Female_Shoes_01A
+  - first:
+      4: 400114
+    second: TSP_Female_Shoes_01B
+  - first:
+      4: 400116
+    second: TSP_Female_Shoes_01C
+  - first:
+      4: 400118
+    second: TSP_Female_Skirt_01A
+  - first:
+      4: 400120
+    second: TSP_Female_Skirt_01B
+  - first:
+      4: 400122
+    second: TSP_Female_Skirt_01C
+  - first:
+      4: 400124
+    second: Wrist_IK.L
+  - first:
+      4: 400126
+    second: Wrist_IK.R
+  - first:
+      21: 2100000
+    second: Atlas_1A_D
+  - first:
+      43: 4300000
+    second: TSP_Female_Helmet_01C
+  - first:
+      43: 4300002
+    second: TSP_Female_Helmet_01B
+  - first:
+      43: 4300004
+    second: TSP_Female_Helmet_01A
+  - first:
+      43: 4300006
+    second: TSP_Female_Hair_01C
+  - first:
+      43: 4300008
+    second: TSP_Female_Hair_01B
+  - first:
+      43: 4300010
+    second: TSP_Female_Hair_01A
+  - first:
+      43: 4300012
+    second: TSP_Female_Shoes_01C
+  - first:
+      43: 4300014
+    second: TSP_Female_Skirt_01C
+  - first:
+      43: 4300016
+    second: TSP_Female_Body_01C
+  - first:
+      43: 4300018
+    second: TSP_Female_Shirt_01C
+  - first:
+      43: 4300020
+    second: TSP_Female_Jacket_01C
+  - first:
+      43: 4300022
+    second: TSP_Female_Jacket_01B
+  - first:
+      43: 4300024
+    second: TSP_Female_Shirt_01B
+  - first:
+      43: 4300026
+    second: TSP_Female_Body_01B
+  - first:
+      43: 4300028
+    second: TSP_Female_Skirt_01B
+  - first:
+      43: 4300030
+    second: TSP_Female_Shoes_01B
+  - first:
+      43: 4300032
+    second: TSP_Female_Shoes_01A
+  - first:
+      43: 4300034
+    second: TSP_Female_Jacket_01A
+  - first:
+      43: 4300036
+    second: TSP_Female_Skirt_01A
+  - first:
+      43: 4300038
+    second: TSP_Female_Body_01A
+  - first:
+      43: 4300040
+    second: TSP_Female_Shirt_01A
+  - first:
+      74: 7400000
+    second: TH_Female_Pose_01
+  - first:
+      74: 7400002
+    second: Female_Armature|1
+  - first:
+      74: 7400004
+    second: Female_Armature|TCP_Female_T_Pose
+  - first:
+      74: 7400006
+    second: Female_Armature|TCP_Male_Idle_01
+  - first:
+      74: 7400008
+    second: Female_Armature|TH_Female_Pose_01
+  - first:
+      74: 7400010
+    second: Female_Armature|TH_Female_Pose_02
+  - first:
+      74: 7400012
+    second: Female_Armature|TH_Female_Pose_03
+  - first:
+      74: 7400014
+    second: Female_Armature|TH_Female_Pose_Signal
+  - first:
+      74: 7400016
+    second: Female_Armature|TH_Female_Pose_Sitting_01
+  - first:
+      74: 7400018
+    second: Female_Armature|TH_Female_Pose_Sitting_02
+  - first:
+      74: 7400020
+    second: Female_Armature|TH_Male_Pose_01
+  - first:
+      74: 7400022
+    second: Female_Armature|TH_Male_Pose_02
+  - first:
+      74: 7400024
+    second: Female_Armature|TH_Male_Pose_03
+  - first:
+      74: 7400026
+    second: Female_Armature|TH_Male_Pose_Signal_01
+  - first:
+      74: 7400028
+    second: Female_Armature|TH_Male_Pose_Signal_02
+  - first:
+      74: 7400030
+    second: Female_Armature|TH_Male_Pose_Sitting_01
+  - first:
+      74: 7400032
+    second: Female_Armature|TH_Male_Pose_Sitting_02
+  - first:
+      74: 7400034
+    second: Female_Armature|TH_Male_T_Pose
+  - first:
+      74: 7400036
+    second: Female_Armature|TSP_Female_Pose_01
+  - first:
+      74: 7400038
+    second: Female_Armature|TSP_Female_Pose_02
+  - first:
+      74: 7400040
+    second: Female_Armature|TSP_Female_Pose_03
+  - first:
+      74: 7400042
+    second: Female_Armature|TSP_Female_Pose_Signal
+  - first:
+      74: 7400044
+    second: Female_Armature|TSP_Female_Pose_Sitting_01
+  - first:
+      74: 7400046
+    second: Female_Armature|TSP_Female_Pose_Sitting_02
+  - first:
+      74: 7400048
+    second: Female_Armature|TSP_Female_T_Pose
+  - first:
+      74: 7400050
+    second: Female_Armature|TSP_Male_Idle_01
+  - first:
+      74: 7400052
+    second: Female_Armature|TSP_Male_Pose_01
+  - first:
+      74: 7400054
+    second: Female_Armature|TSP_Male_Pose_02
+  - first:
+      74: 7400056
+    second: Female_Armature|TSP_Male_Pose_03
+  - first:
+      74: 7400058
+    second: Female_Armature|TSP_Male_Pose_Signal_01
+  - first:
+      74: 7400060
+    second: Female_Armature|TSP_Male_Pose_Signal_02
+  - first:
+      74: 7400062
+    second: Female_Armature|TSP_Male_Pose_Sitting_01
+  - first:
+      74: 7400064
+    second: Female_Armature|TSP_Male_Pose_Sitting_02
+  - first:
+      74: 7400066
+    second: Female_Armature|TSP_Male_T_Pose
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: TSP_Female_Body_01A
+  - first:
+      137: 13700002
+    second: TSP_Female_Body_01B
+  - first:
+      137: 13700004
+    second: TSP_Female_Body_01C
+  - first:
+      137: 13700006
+    second: TSP_Female_Hair_01A
+  - first:
+      137: 13700008
+    second: TSP_Female_Hair_01B
+  - first:
+      137: 13700010
+    second: TSP_Female_Hair_01C
+  - first:
+      137: 13700012
+    second: TSP_Female_Helmet_01A
+  - first:
+      137: 13700014
+    second: TSP_Female_Helmet_01B
+  - first:
+      137: 13700016
+    second: TSP_Female_Helmet_01C
+  - first:
+      137: 13700018
+    second: TSP_Female_Jacket_01A
+  - first:
+      137: 13700020
+    second: TSP_Female_Jacket_01B
+  - first:
+      137: 13700022
+    second: TSP_Female_Jacket_01C
+  - first:
+      137: 13700024
+    second: TSP_Female_Shirt_01A
+  - first:
+      137: 13700026
+    second: TSP_Female_Shirt_01B
+  - first:
+      137: 13700028
+    second: TSP_Female_Shirt_01C
+  - first:
+      137: 13700030
+    second: TSP_Female_Shoes_01A
+  - first:
+      137: 13700032
+    second: TSP_Female_Shoes_01B
+  - first:
+      137: 13700034
+    second: TSP_Female_Shoes_01C
+  - first:
+      137: 13700036
+    second: TSP_Female_Skirt_01A
+  - first:
+      137: 13700038
+    second: TSP_Female_Skirt_01B
+  - first:
+      137: 13700040
+    second: TSP_Female_Skirt_01C
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -216,7 +628,7 @@ ModelImporter:
       name: Atlas_1A_D
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -225,9 +637,8 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -245,6 +656,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Female_Armature|TSP_Female_Pose_01
       takeName: Female_Armature|TSP_Female_Pose_01
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -273,6 +685,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Female_Armature|TSP_Female_Pose_02
       takeName: Female_Armature|TSP_Female_Pose_02
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -301,6 +714,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Female_Armature|TSP_Female_Pose_03
       takeName: Female_Armature|TSP_Female_Pose_03
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -329,6 +743,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Female_Armature|TSP_Female_Pose_Signal
       takeName: Female_Armature|TSP_Female_Pose_Signal
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -357,6 +772,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Female_Armature|TSP_Female_Pose_Sitting_01
       takeName: Female_Armature|TSP_Female_Pose_Sitting_01
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -385,6 +801,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Female_Armature|TSP_Female_Pose_Sitting_02
       takeName: Female_Armature|TSP_Female_Pose_Sitting_02
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -413,6 +830,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Female_Armature|TSP_Female_T_Pose
       takeName: Female_Armature|TSP_Female_T_Pose
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -438,32 +856,46 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -472,10 +904,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: Hips
       humanName: Hips
@@ -1045,13 +1477,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -1,47 +1,125 @@
 fileFormatVersion: 2
 guid: d4a83d83a48a17b47a0f8a595faf2ff1
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: TSP_Wardrobe_01A_Door_01
-    100004: TSP_Wardrobe_01A_Door_02
-    100006: TSP_Wardrobe_01A_Door_03
-    100008: TSP_Wardrobe_01A_Door.L
-    100010: TSP_Wardrobe_01A_Door.M
-    100012: TSP_Wardrobe_01A_Door.R
-    400000: //RootNode
-    400002: TSP_Wardrobe_01A_Door_01
-    400004: TSP_Wardrobe_01A_Door_02
-    400006: TSP_Wardrobe_01A_Door_03
-    400008: TSP_Wardrobe_01A_Door.L
-    400010: TSP_Wardrobe_01A_Door.M
-    400012: TSP_Wardrobe_01A_Door.R
-    2100000: 'Material #959'
-    2100002: 'Material #660'
-    2100004: 'Material #659'
-    2100006: 'Material #658'
-    2300000: //RootNode
-    2300002: TSP_Wardrobe_01A_Door_01
-    2300004: TSP_Wardrobe_01A_Door_02
-    2300006: TSP_Wardrobe_01A_Door_03
-    2300008: TSP_Wardrobe_01A_Door.L
-    2300010: TSP_Wardrobe_01A_Door.M
-    2300012: TSP_Wardrobe_01A_Door.R
-    3300000: //RootNode
-    3300002: TSP_Wardrobe_01A_Door_01
-    3300004: TSP_Wardrobe_01A_Door_02
-    3300006: TSP_Wardrobe_01A_Door_03
-    3300008: TSP_Wardrobe_01A_Door.L
-    3300010: TSP_Wardrobe_01A_Door.M
-    3300012: TSP_Wardrobe_01A_Door.R
-    4300000: TSP_Wardrobe_01A
-    4300002: TSP_Wardrobe_01A_Door_03
-    4300004: TSP_Wardrobe_01A_Door_02
-    4300006: TSP_Wardrobe_01A_Door_01
-    4300008: TSP_Wardrobe_01A_Door.L
-    4300010: TSP_Wardrobe_01A_Door.M
-    4300012: TSP_Wardrobe_01A_Door.R
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: TSP_Wardrobe_01A_Door_01
+  - first:
+      1: 100004
+    second: TSP_Wardrobe_01A_Door_02
+  - first:
+      1: 100006
+    second: TSP_Wardrobe_01A_Door_03
+  - first:
+      1: 100008
+    second: TSP_Wardrobe_01A_Door.L
+  - first:
+      1: 100010
+    second: TSP_Wardrobe_01A_Door.M
+  - first:
+      1: 100012
+    second: TSP_Wardrobe_01A_Door.R
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: TSP_Wardrobe_01A_Door_01
+  - first:
+      4: 400004
+    second: TSP_Wardrobe_01A_Door_02
+  - first:
+      4: 400006
+    second: TSP_Wardrobe_01A_Door_03
+  - first:
+      4: 400008
+    second: TSP_Wardrobe_01A_Door.L
+  - first:
+      4: 400010
+    second: TSP_Wardrobe_01A_Door.M
+  - first:
+      4: 400012
+    second: TSP_Wardrobe_01A_Door.R
+  - first:
+      21: 2100000
+    second: Material #959
+  - first:
+      21: 2100002
+    second: Material #660
+  - first:
+      21: 2100004
+    second: Material #659
+  - first:
+      21: 2100006
+    second: Material #658
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: TSP_Wardrobe_01A_Door_01
+  - first:
+      23: 2300004
+    second: TSP_Wardrobe_01A_Door_02
+  - first:
+      23: 2300006
+    second: TSP_Wardrobe_01A_Door_03
+  - first:
+      23: 2300008
+    second: TSP_Wardrobe_01A_Door.L
+  - first:
+      23: 2300010
+    second: TSP_Wardrobe_01A_Door.M
+  - first:
+      23: 2300012
+    second: TSP_Wardrobe_01A_Door.R
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: TSP_Wardrobe_01A_Door_01
+  - first:
+      33: 3300004
+    second: TSP_Wardrobe_01A_Door_02
+  - first:
+      33: 3300006
+    second: TSP_Wardrobe_01A_Door_03
+  - first:
+      33: 3300008
+    second: TSP_Wardrobe_01A_Door.L
+  - first:
+      33: 3300010
+    second: TSP_Wardrobe_01A_Door.M
+  - first:
+      33: 3300012
+    second: TSP_Wardrobe_01A_Door.R
+  - first:
+      43: 4300000
+    second: TSP_Wardrobe_01A
+  - first:
+      43: 4300002
+    second: TSP_Wardrobe_01A_Door_03
+  - first:
+      43: 4300004
+    second: TSP_Wardrobe_01A_Door_02
+  - first:
+      43: 4300006
+    second: TSP_Wardrobe_01A_Door_01
+  - first:
+      43: 4300008
+    second: TSP_Wardrobe_01A_Door.L
+  - first:
+      43: 4300010
+    second: TSP_Wardrobe_01A_Door.M
+  - first:
+      43: 4300012
+    second: TSP_Wardrobe_01A_Door.R
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -51,25 +129,25 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #658'
+      name: Material #658
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #659'
+      name: Material #659
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #660'
+      name: Material #660
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #959'
+      name: Material #959
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -78,9 +156,8 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -95,32 +172,46 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -129,10 +220,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -142,13 +233,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

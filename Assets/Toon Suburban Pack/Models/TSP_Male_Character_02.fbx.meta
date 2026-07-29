@@ -1,213 +1,623 @@
 fileFormatVersion: 2
 guid: 4cfe309f6ec3c2740b27e2366cb3f343
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Ankle_IK.L
-    100002: Ankle_IK.L_end
-    100004: Ankle_IK.R
-    100006: Ankle_IK.R_end
-    100008: Arm.L
-    100010: Arm.R
-    100012: Clavicle.L
-    100014: Clavicle.R
-    100016: Elbow_IK.L
-    100018: Elbow_IK.L_end
-    100020: Elbow_IK.R
-    100022: Elbow_IK.R_end
-    100024: Fingers.L
-    100026: Fingers.R
-    100028: Fingertips.L
-    100030: Fingertips.L_end
-    100032: Fingertips.R
-    100034: Fingertips.R_end
-    100036: Foot.L
-    100038: Foot.R
-    100040: Forearm.L
-    100042: Forearm.R
-    100044: Hand.L
-    100046: Hand.R
-    100048: Head
-    100050: Head_end
-    100052: Hips
-    100054: Knee_IK.L
-    100056: Knee_IK.L_end
-    100058: Knee_IK.R
-    100060: Knee_IK.R_end
-    100062: Male_Armature
-    100064: Male_Hairstyles
-    100066: Neck
-    100068: Quad.L
-    100070: Quad.R
-    100072: Root
-    100074: Shin.L
-    100076: Shin.R
-    100078: Spine_01
-    100080: Spine_02
-    100082: Spine_03
-    100084: Thumb.L
-    100086: Thumb.R
-    100088: Thumb_Tip.L
-    100090: Thumb_Tip.L_end
-    100092: Thumb_Tip.R
-    100094: Thumb_Tip.R_end
-    100096: Toes.L
-    100098: Toes.L_end
-    100100: Toes.R
-    100102: Toes.R_end
-    100104: TSP_Male_Body_02A
-    100106: TSP_Male_Body_02B
-    100108: TSP_Male_Body_02C
-    100110: //RootNode
-    100112: TSP_Male_Hair_02A
-    100114: TSP_Male_Hair_02B
-    100116: TSP_Male_Hair_02C
-    100118: TSP_Male_Jacket_02A
-    100120: TSP_Male_Jacket_02B
-    100122: TSP_Male_Jacket_02C
-    100124: TSP_Male_Pants_02A
-    100126: TSP_Male_Pants_02B
-    100128: TSP_Male_Pants_02C
-    100130: TSP_Male_Shirt_02A
-    100132: TSP_Male_Shirt_02B
-    100134: TSP_Male_Shirt_02C
-    100136: TSP_Male_Shoes_02A
-    100138: TSP_Male_Shoes_02B
-    100140: TSP_Male_Shoes_02C
-    100142: Wrist_IK.L
-    100144: Wrist_IK.L_end
-    100146: Wrist_IK.R
-    100148: Wrist_IK.R_end
-    400000: Ankle_IK.L
-    400002: Ankle_IK.L_end
-    400004: Ankle_IK.R
-    400006: Ankle_IK.R_end
-    400008: Arm.L
-    400010: Arm.R
-    400012: Clavicle.L
-    400014: Clavicle.R
-    400016: Elbow_IK.L
-    400018: Elbow_IK.L_end
-    400020: Elbow_IK.R
-    400022: Elbow_IK.R_end
-    400024: Fingers.L
-    400026: Fingers.R
-    400028: Fingertips.L
-    400030: Fingertips.L_end
-    400032: Fingertips.R
-    400034: Fingertips.R_end
-    400036: Foot.L
-    400038: Foot.R
-    400040: Forearm.L
-    400042: Forearm.R
-    400044: Hand.L
-    400046: Hand.R
-    400048: Head
-    400050: Head_end
-    400052: Hips
-    400054: Knee_IK.L
-    400056: Knee_IK.L_end
-    400058: Knee_IK.R
-    400060: Knee_IK.R_end
-    400062: Male_Armature
-    400064: Male_Hairstyles
-    400066: Neck
-    400068: Quad.L
-    400070: Quad.R
-    400072: Root
-    400074: Shin.L
-    400076: Shin.R
-    400078: Spine_01
-    400080: Spine_02
-    400082: Spine_03
-    400084: Thumb.L
-    400086: Thumb.R
-    400088: Thumb_Tip.L
-    400090: Thumb_Tip.L_end
-    400092: Thumb_Tip.R
-    400094: Thumb_Tip.R_end
-    400096: Toes.L
-    400098: Toes.L_end
-    400100: Toes.R
-    400102: Toes.R_end
-    400104: TSP_Male_Body_02A
-    400106: TSP_Male_Body_02B
-    400108: TSP_Male_Body_02C
-    400110: //RootNode
-    400112: TSP_Male_Hair_02A
-    400114: TSP_Male_Hair_02B
-    400116: TSP_Male_Hair_02C
-    400118: TSP_Male_Jacket_02A
-    400120: TSP_Male_Jacket_02B
-    400122: TSP_Male_Jacket_02C
-    400124: TSP_Male_Pants_02A
-    400126: TSP_Male_Pants_02B
-    400128: TSP_Male_Pants_02C
-    400130: TSP_Male_Shirt_02A
-    400132: TSP_Male_Shirt_02B
-    400134: TSP_Male_Shirt_02C
-    400136: TSP_Male_Shoes_02A
-    400138: TSP_Male_Shoes_02B
-    400140: TSP_Male_Shoes_02C
-    400142: Wrist_IK.L
-    400144: Wrist_IK.L_end
-    400146: Wrist_IK.R
-    400148: Wrist_IK.R_end
-    2100000: Atlas_1A_D
-    4300000: TSP_Male_Hair_02C
-    4300002: TSP_Male_Hair_02B
-    4300004: TSP_Male_Hair_02A
-    4300006: TSP_Male_Shoes_02C
-    4300008: TSP_Male_Jacket_02C
-    4300010: TSP_Male_Body_02C
-    4300012: TSP_Male_Shirt_02C
-    4300014: TSP_Male_Pants_02C
-    4300016: TSP_Male_Pants_02B
-    4300018: TSP_Male_Shirt_02B
-    4300020: TSP_Male_Body_02B
-    4300022: TSP_Male_Jacket_02B
-    4300024: TSP_Male_Shoes_02B
-    4300026: TSP_Male_Shoes_02A
-    4300028: TSP_Male_Jacket_02A
-    4300030: TSP_Male_Body_02A
-    4300032: TSP_Male_Shirt_02A
-    4300034: TSP_Male_Pants_02A
-    7400000: Male_Armature|1
-    7400002: Male_Armature|TSP_Female_Pose_01
-    7400004: Male_Armature|TSP_Female_Pose_02
-    7400006: Male_Armature|TSP_Female_Pose_03
-    7400008: Male_Armature|TSP_Female_Pose_Signal
-    7400010: Male_Armature|TSP_Female_Pose_Sitting_01
-    7400012: Male_Armature|TSP_Female_Pose_Sitting_02
-    7400014: Male_Armature|TSP_Female_T_Pose
-    7400016: Male_Armature|TSP_Male_Idle_01
-    7400018: Male_Armature|TSP_Male_Pose_01
-    7400020: Male_Armature|TSP_Male_Pose_02
-    7400022: Male_Armature|TSP_Male_Pose_03
-    7400024: Male_Armature|TSP_Male_Pose_Signal_01
-    7400026: Male_Armature|TSP_Male_Pose_Signal_02
-    7400028: Male_Armature|TSP_Male_Pose_Sitting_01
-    7400030: Male_Armature|TSP_Male_Pose_Sitting_02
-    7400032: Male_Armature|TSP_Male_T_Pose
-    9500000: //RootNode
-    13700000: TSP_Male_Body_02A
-    13700002: TSP_Male_Body_02B
-    13700004: TSP_Male_Body_02C
-    13700006: TSP_Male_Hair_02A
-    13700008: TSP_Male_Hair_02B
-    13700010: TSP_Male_Hair_02C
-    13700012: TSP_Male_Jacket_02A
-    13700014: TSP_Male_Jacket_02B
-    13700016: TSP_Male_Jacket_02C
-    13700018: TSP_Male_Pants_02A
-    13700020: TSP_Male_Pants_02B
-    13700022: TSP_Male_Pants_02C
-    13700024: TSP_Male_Shirt_02A
-    13700026: TSP_Male_Shirt_02B
-    13700028: TSP_Male_Shirt_02C
-    13700030: TSP_Male_Shoes_02A
-    13700032: TSP_Male_Shoes_02B
-    13700034: TSP_Male_Shoes_02C
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Ankle_IK.L
+  - first:
+      1: 100002
+    second: Ankle_IK.L_end
+  - first:
+      1: 100004
+    second: Ankle_IK.R
+  - first:
+      1: 100006
+    second: Ankle_IK.R_end
+  - first:
+      1: 100008
+    second: Arm.L
+  - first:
+      1: 100010
+    second: Arm.R
+  - first:
+      1: 100012
+    second: Clavicle.L
+  - first:
+      1: 100014
+    second: Clavicle.R
+  - first:
+      1: 100016
+    second: Elbow_IK.L
+  - first:
+      1: 100018
+    second: Elbow_IK.L_end
+  - first:
+      1: 100020
+    second: Elbow_IK.R
+  - first:
+      1: 100022
+    second: Elbow_IK.R_end
+  - first:
+      1: 100024
+    second: Fingers.L
+  - first:
+      1: 100026
+    second: Fingers.R
+  - first:
+      1: 100028
+    second: Fingertips.L
+  - first:
+      1: 100030
+    second: Fingertips.L_end
+  - first:
+      1: 100032
+    second: Fingertips.R
+  - first:
+      1: 100034
+    second: Fingertips.R_end
+  - first:
+      1: 100036
+    second: Foot.L
+  - first:
+      1: 100038
+    second: Foot.R
+  - first:
+      1: 100040
+    second: Forearm.L
+  - first:
+      1: 100042
+    second: Forearm.R
+  - first:
+      1: 100044
+    second: Hand.L
+  - first:
+      1: 100046
+    second: Hand.R
+  - first:
+      1: 100048
+    second: Head
+  - first:
+      1: 100050
+    second: Head_end
+  - first:
+      1: 100052
+    second: Hips
+  - first:
+      1: 100054
+    second: Knee_IK.L
+  - first:
+      1: 100056
+    second: Knee_IK.L_end
+  - first:
+      1: 100058
+    second: Knee_IK.R
+  - first:
+      1: 100060
+    second: Knee_IK.R_end
+  - first:
+      1: 100062
+    second: Male_Armature
+  - first:
+      1: 100064
+    second: Male_Hairstyles
+  - first:
+      1: 100066
+    second: Neck
+  - first:
+      1: 100068
+    second: Quad.L
+  - first:
+      1: 100070
+    second: Quad.R
+  - first:
+      1: 100072
+    second: Root
+  - first:
+      1: 100074
+    second: Shin.L
+  - first:
+      1: 100076
+    second: Shin.R
+  - first:
+      1: 100078
+    second: Spine_01
+  - first:
+      1: 100080
+    second: Spine_02
+  - first:
+      1: 100082
+    second: Spine_03
+  - first:
+      1: 100084
+    second: Thumb.L
+  - first:
+      1: 100086
+    second: Thumb.R
+  - first:
+      1: 100088
+    second: Thumb_Tip.L
+  - first:
+      1: 100090
+    second: Thumb_Tip.L_end
+  - first:
+      1: 100092
+    second: Thumb_Tip.R
+  - first:
+      1: 100094
+    second: Thumb_Tip.R_end
+  - first:
+      1: 100096
+    second: Toes.L
+  - first:
+      1: 100098
+    second: Toes.L_end
+  - first:
+      1: 100100
+    second: Toes.R
+  - first:
+      1: 100102
+    second: Toes.R_end
+  - first:
+      1: 100104
+    second: TSP_Male_Body_02A
+  - first:
+      1: 100106
+    second: TSP_Male_Body_02B
+  - first:
+      1: 100108
+    second: TSP_Male_Body_02C
+  - first:
+      1: 100110
+    second: //RootNode
+  - first:
+      1: 100112
+    second: TSP_Male_Hair_02A
+  - first:
+      1: 100114
+    second: TSP_Male_Hair_02B
+  - first:
+      1: 100116
+    second: TSP_Male_Hair_02C
+  - first:
+      1: 100118
+    second: TSP_Male_Jacket_02A
+  - first:
+      1: 100120
+    second: TSP_Male_Jacket_02B
+  - first:
+      1: 100122
+    second: TSP_Male_Jacket_02C
+  - first:
+      1: 100124
+    second: TSP_Male_Pants_02A
+  - first:
+      1: 100126
+    second: TSP_Male_Pants_02B
+  - first:
+      1: 100128
+    second: TSP_Male_Pants_02C
+  - first:
+      1: 100130
+    second: TSP_Male_Shirt_02A
+  - first:
+      1: 100132
+    second: TSP_Male_Shirt_02B
+  - first:
+      1: 100134
+    second: TSP_Male_Shirt_02C
+  - first:
+      1: 100136
+    second: TSP_Male_Shoes_02A
+  - first:
+      1: 100138
+    second: TSP_Male_Shoes_02B
+  - first:
+      1: 100140
+    second: TSP_Male_Shoes_02C
+  - first:
+      1: 100142
+    second: Wrist_IK.L
+  - first:
+      1: 100144
+    second: Wrist_IK.L_end
+  - first:
+      1: 100146
+    second: Wrist_IK.R
+  - first:
+      1: 100148
+    second: Wrist_IK.R_end
+  - first:
+      4: 400000
+    second: Ankle_IK.L
+  - first:
+      4: 400002
+    second: Ankle_IK.L_end
+  - first:
+      4: 400004
+    second: Ankle_IK.R
+  - first:
+      4: 400006
+    second: Ankle_IK.R_end
+  - first:
+      4: 400008
+    second: Arm.L
+  - first:
+      4: 400010
+    second: Arm.R
+  - first:
+      4: 400012
+    second: Clavicle.L
+  - first:
+      4: 400014
+    second: Clavicle.R
+  - first:
+      4: 400016
+    second: Elbow_IK.L
+  - first:
+      4: 400018
+    second: Elbow_IK.L_end
+  - first:
+      4: 400020
+    second: Elbow_IK.R
+  - first:
+      4: 400022
+    second: Elbow_IK.R_end
+  - first:
+      4: 400024
+    second: Fingers.L
+  - first:
+      4: 400026
+    second: Fingers.R
+  - first:
+      4: 400028
+    second: Fingertips.L
+  - first:
+      4: 400030
+    second: Fingertips.L_end
+  - first:
+      4: 400032
+    second: Fingertips.R
+  - first:
+      4: 400034
+    second: Fingertips.R_end
+  - first:
+      4: 400036
+    second: Foot.L
+  - first:
+      4: 400038
+    second: Foot.R
+  - first:
+      4: 400040
+    second: Forearm.L
+  - first:
+      4: 400042
+    second: Forearm.R
+  - first:
+      4: 400044
+    second: Hand.L
+  - first:
+      4: 400046
+    second: Hand.R
+  - first:
+      4: 400048
+    second: Head
+  - first:
+      4: 400050
+    second: Head_end
+  - first:
+      4: 400052
+    second: Hips
+  - first:
+      4: 400054
+    second: Knee_IK.L
+  - first:
+      4: 400056
+    second: Knee_IK.L_end
+  - first:
+      4: 400058
+    second: Knee_IK.R
+  - first:
+      4: 400060
+    second: Knee_IK.R_end
+  - first:
+      4: 400062
+    second: Male_Armature
+  - first:
+      4: 400064
+    second: Male_Hairstyles
+  - first:
+      4: 400066
+    second: Neck
+  - first:
+      4: 400068
+    second: Quad.L
+  - first:
+      4: 400070
+    second: Quad.R
+  - first:
+      4: 400072
+    second: Root
+  - first:
+      4: 400074
+    second: Shin.L
+  - first:
+      4: 400076
+    second: Shin.R
+  - first:
+      4: 400078
+    second: Spine_01
+  - first:
+      4: 400080
+    second: Spine_02
+  - first:
+      4: 400082
+    second: Spine_03
+  - first:
+      4: 400084
+    second: Thumb.L
+  - first:
+      4: 400086
+    second: Thumb.R
+  - first:
+      4: 400088
+    second: Thumb_Tip.L
+  - first:
+      4: 400090
+    second: Thumb_Tip.L_end
+  - first:
+      4: 400092
+    second: Thumb_Tip.R
+  - first:
+      4: 400094
+    second: Thumb_Tip.R_end
+  - first:
+      4: 400096
+    second: Toes.L
+  - first:
+      4: 400098
+    second: Toes.L_end
+  - first:
+      4: 400100
+    second: Toes.R
+  - first:
+      4: 400102
+    second: Toes.R_end
+  - first:
+      4: 400104
+    second: TSP_Male_Body_02A
+  - first:
+      4: 400106
+    second: TSP_Male_Body_02B
+  - first:
+      4: 400108
+    second: TSP_Male_Body_02C
+  - first:
+      4: 400110
+    second: //RootNode
+  - first:
+      4: 400112
+    second: TSP_Male_Hair_02A
+  - first:
+      4: 400114
+    second: TSP_Male_Hair_02B
+  - first:
+      4: 400116
+    second: TSP_Male_Hair_02C
+  - first:
+      4: 400118
+    second: TSP_Male_Jacket_02A
+  - first:
+      4: 400120
+    second: TSP_Male_Jacket_02B
+  - first:
+      4: 400122
+    second: TSP_Male_Jacket_02C
+  - first:
+      4: 400124
+    second: TSP_Male_Pants_02A
+  - first:
+      4: 400126
+    second: TSP_Male_Pants_02B
+  - first:
+      4: 400128
+    second: TSP_Male_Pants_02C
+  - first:
+      4: 400130
+    second: TSP_Male_Shirt_02A
+  - first:
+      4: 400132
+    second: TSP_Male_Shirt_02B
+  - first:
+      4: 400134
+    second: TSP_Male_Shirt_02C
+  - first:
+      4: 400136
+    second: TSP_Male_Shoes_02A
+  - first:
+      4: 400138
+    second: TSP_Male_Shoes_02B
+  - first:
+      4: 400140
+    second: TSP_Male_Shoes_02C
+  - first:
+      4: 400142
+    second: Wrist_IK.L
+  - first:
+      4: 400144
+    second: Wrist_IK.L_end
+  - first:
+      4: 400146
+    second: Wrist_IK.R
+  - first:
+      4: 400148
+    second: Wrist_IK.R_end
+  - first:
+      21: 2100000
+    second: Atlas_1A_D
+  - first:
+      43: 4300000
+    second: TSP_Male_Hair_02C
+  - first:
+      43: 4300002
+    second: TSP_Male_Hair_02B
+  - first:
+      43: 4300004
+    second: TSP_Male_Hair_02A
+  - first:
+      43: 4300006
+    second: TSP_Male_Shoes_02C
+  - first:
+      43: 4300008
+    second: TSP_Male_Jacket_02C
+  - first:
+      43: 4300010
+    second: TSP_Male_Body_02C
+  - first:
+      43: 4300012
+    second: TSP_Male_Shirt_02C
+  - first:
+      43: 4300014
+    second: TSP_Male_Pants_02C
+  - first:
+      43: 4300016
+    second: TSP_Male_Pants_02B
+  - first:
+      43: 4300018
+    second: TSP_Male_Shirt_02B
+  - first:
+      43: 4300020
+    second: TSP_Male_Body_02B
+  - first:
+      43: 4300022
+    second: TSP_Male_Jacket_02B
+  - first:
+      43: 4300024
+    second: TSP_Male_Shoes_02B
+  - first:
+      43: 4300026
+    second: TSP_Male_Shoes_02A
+  - first:
+      43: 4300028
+    second: TSP_Male_Jacket_02A
+  - first:
+      43: 4300030
+    second: TSP_Male_Body_02A
+  - first:
+      43: 4300032
+    second: TSP_Male_Shirt_02A
+  - first:
+      43: 4300034
+    second: TSP_Male_Pants_02A
+  - first:
+      74: 7400000
+    second: Male_Armature|1
+  - first:
+      74: 7400002
+    second: Male_Armature|TSP_Female_Pose_01
+  - first:
+      74: 7400004
+    second: Male_Armature|TSP_Female_Pose_02
+  - first:
+      74: 7400006
+    second: Male_Armature|TSP_Female_Pose_03
+  - first:
+      74: 7400008
+    second: Male_Armature|TSP_Female_Pose_Signal
+  - first:
+      74: 7400010
+    second: Male_Armature|TSP_Female_Pose_Sitting_01
+  - first:
+      74: 7400012
+    second: Male_Armature|TSP_Female_Pose_Sitting_02
+  - first:
+      74: 7400014
+    second: Male_Armature|TSP_Female_T_Pose
+  - first:
+      74: 7400016
+    second: Male_Armature|TSP_Male_Idle_01
+  - first:
+      74: 7400018
+    second: Male_Armature|TSP_Male_Pose_01
+  - first:
+      74: 7400020
+    second: Male_Armature|TSP_Male_Pose_02
+  - first:
+      74: 7400022
+    second: Male_Armature|TSP_Male_Pose_03
+  - first:
+      74: 7400024
+    second: Male_Armature|TSP_Male_Pose_Signal_01
+  - first:
+      74: 7400026
+    second: Male_Armature|TSP_Male_Pose_Signal_02
+  - first:
+      74: 7400028
+    second: Male_Armature|TSP_Male_Pose_Sitting_01
+  - first:
+      74: 7400030
+    second: Male_Armature|TSP_Male_Pose_Sitting_02
+  - first:
+      74: 7400032
+    second: Male_Armature|TSP_Male_T_Pose
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: TSP_Male_Body_02A
+  - first:
+      137: 13700002
+    second: TSP_Male_Body_02B
+  - first:
+      137: 13700004
+    second: TSP_Male_Body_02C
+  - first:
+      137: 13700006
+    second: TSP_Male_Hair_02A
+  - first:
+      137: 13700008
+    second: TSP_Male_Hair_02B
+  - first:
+      137: 13700010
+    second: TSP_Male_Hair_02C
+  - first:
+      137: 13700012
+    second: TSP_Male_Jacket_02A
+  - first:
+      137: 13700014
+    second: TSP_Male_Jacket_02B
+  - first:
+      137: 13700016
+    second: TSP_Male_Jacket_02C
+  - first:
+      137: 13700018
+    second: TSP_Male_Pants_02A
+  - first:
+      137: 13700020
+    second: TSP_Male_Pants_02B
+  - first:
+      137: 13700022
+    second: TSP_Male_Pants_02C
+  - first:
+      137: 13700024
+    second: TSP_Male_Shirt_02A
+  - first:
+      137: 13700026
+    second: TSP_Male_Shirt_02B
+  - first:
+      137: 13700028
+    second: TSP_Male_Shirt_02C
+  - first:
+      137: 13700030
+    second: TSP_Male_Shoes_02A
+  - first:
+      137: 13700032
+    second: TSP_Male_Shoes_02B
+  - first:
+      137: 13700034
+    second: TSP_Male_Shoes_02C
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -215,7 +625,7 @@ ModelImporter:
       name: Atlas_1A_D
     second: {fileID: 2100000, guid: 3a2b9314a175d694ebdee90b98c5563b, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -224,9 +634,8 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -244,6 +653,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Male_Armature|TSP_Male_Pose_01
       takeName: Male_Armature|TSP_Male_Pose_01
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -272,6 +682,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Male_Armature|TSP_Male_Pose_02
       takeName: Male_Armature|TSP_Male_Pose_02
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -300,6 +711,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Male_Armature|TSP_Male_Pose_03
       takeName: Male_Armature|TSP_Male_Pose_03
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -328,6 +740,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Male_Armature|TSP_Male_Pose_Signal_01
       takeName: Male_Armature|TSP_Male_Pose_Signal_01
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -356,6 +769,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Male_Armature|TSP_Male_Pose_Signal_02
       takeName: Male_Armature|TSP_Male_Pose_Signal_02
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -384,6 +798,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Male_Armature|TSP_Male_Pose_Sitting_01
       takeName: Male_Armature|TSP_Male_Pose_Sitting_01
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -412,6 +827,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Male_Armature|TSP_Male_Pose_Sitting_02
       takeName: Male_Armature|TSP_Male_Pose_Sitting_02
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -440,6 +856,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Male_Armature|TSP_Male_T_Pose
       takeName: Male_Armature|TSP_Male_T_Pose
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -465,32 +882,46 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -499,10 +930,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: Hips
       humanName: Hips
@@ -1052,13 +1483,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

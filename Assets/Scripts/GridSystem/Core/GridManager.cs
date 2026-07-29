@@ -137,6 +137,83 @@ namespace CityScape.GridSystem.Core
 
             Debug.Log($"[GridManager] Grid initialised: {gridWidth}×{gridHeight}, " +
                       $"cellSize={cellSize}, origin={gridOrigin}");
+
+            InitializeGridVisuals();
+        }
+
+        // ─────────────────────────────────────────────
+        //  Grid Visualization (In-Game)
+        // ─────────────────────────────────────────────
+
+        private Mesh _gridMesh;
+        private Material _gridMaterial;
+
+        private void InitializeGridVisuals()
+        {
+            _gridMaterial = new Material(Shader.Find("Universal Render Pipeline/Unlit"));
+            _gridMaterial.SetColor("_BaseColor", new Color(1f, 1f, 1f, 0.2f));
+            _gridMaterial.SetFloat("_Surface", 1); // Transparent
+            _gridMaterial.SetInt("_Blend", 0); // Alpha
+            _gridMaterial.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            _gridMaterial.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            _gridMaterial.SetInt("_ZWrite", 0);
+            _gridMaterial.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+            _gridMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+
+            GenerateGridMesh();
+        }
+
+        private void GenerateGridMesh()
+        {
+            int numVertices = 2 * ((gridWidth + 1) + (gridHeight + 1));
+            Vector3[] vertices = new Vector3[numVertices];
+            int[] indices = new int[numVertices];
+
+            float yOffset = 0.05f; // Slightly above ground
+            Vector3 origin = gridOrigin + new Vector3(0, yOffset, 0);
+            int vIndex = 0;
+
+            // Vertical lines
+            for (int x = 0; x <= gridWidth; x++)
+            {
+                vertices[vIndex] = origin + new Vector3(x * cellSize, 0, 0);
+                indices[vIndex] = vIndex;
+                vIndex++;
+
+                vertices[vIndex] = origin + new Vector3(x * cellSize, 0, gridHeight * cellSize);
+                indices[vIndex] = vIndex;
+                vIndex++;
+            }
+
+            // Horizontal lines
+            for (int y = 0; y <= gridHeight; y++)
+            {
+                vertices[vIndex] = origin + new Vector3(0, 0, y * cellSize);
+                indices[vIndex] = vIndex;
+                vIndex++;
+
+                vertices[vIndex] = origin + new Vector3(gridWidth * cellSize, 0, y * cellSize);
+                indices[vIndex] = vIndex;
+                vIndex++;
+            }
+
+            _gridMesh = new Mesh();
+            _gridMesh.name = "InGameGridLines";
+            _gridMesh.vertices = vertices;
+            _gridMesh.SetIndices(indices, MeshTopology.Lines, 0);
+        }
+
+        private void Update()
+        {
+            // Only draw grid in Build Mode
+            if (CityScape.Managers.CameraManager.Instance != null && 
+                CityScape.Managers.CameraManager.Instance.CurrentMode == CityScape.Managers.CameraMode.Build)
+            {
+                if (_gridMesh != null && _gridMaterial != null)
+                {
+                    Graphics.DrawMesh(_gridMesh, Vector3.zero, Quaternion.identity, _gridMaterial, gameObject.layer);
+                }
+            }
         }
 
         // ─────────────────────────────────────────────

@@ -1,120 +1,309 @@
 fileFormatVersion: 2
 guid: 6352cb4c06ba44108a0068f253ea4d43
-timeCreated: 1570225041
-licenseType: Store
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: man-soldier-ge
-    100002: man-soldier-special-ge
-    100004: man-soldier-us
-    100006: sherman
-    100008: //RootNode
-    100010: sherman-belt
-    100012: sherman-body
-    100014: sherman-gun
-    100016: sherman-head
-    100018: sherman-wheel-top1
-    100020: sherman-wheel-top2
-    100022: sherman-wheel-top3
-    100024: sherman-wheel1
-    100026: sherman-wheel2
-    100028: sherman-wheel3
-    100030: sherman-wheel4
-    100032: sherman-wheel5
-    100034: sherman-wheel6
-    100036: sherman-wheel7
-    100038: sherman-wheel8
-    400000: man-soldier-ge
-    400002: man-soldier-special-ge
-    400004: man-soldier-us
-    400006: sherman
-    400008: //RootNode
-    400010: sherman-belt
-    400012: sherman-body
-    400014: sherman-gun
-    400016: sherman-head
-    400018: sherman-wheel-top1
-    400020: sherman-wheel-top2
-    400022: sherman-wheel-top3
-    400024: sherman-wheel1
-    400026: sherman-wheel2
-    400028: sherman-wheel3
-    400030: sherman-wheel4
-    400032: sherman-wheel5
-    400034: sherman-wheel6
-    400036: sherman-wheel7
-    400038: sherman-wheel8
-    2300000: man-soldier-ge
-    2300002: man-soldier-special-ge
-    2300004: man-soldier-us
-    2300006: sherman-belt
-    2300008: sherman-body
-    2300010: sherman-gun
-    2300012: sherman-head
-    2300014: sherman-wheel-top1
-    2300016: sherman-wheel-top2
-    2300018: sherman-wheel-top3
-    2300020: sherman-wheel1
-    2300022: sherman-wheel2
-    2300024: sherman-wheel3
-    2300026: sherman-wheel4
-    2300028: sherman-wheel5
-    2300030: sherman-wheel6
-    2300032: sherman-wheel7
-    2300034: sherman-wheel8
-    3300000: man-soldier-ge
-    3300002: man-soldier-special-ge
-    3300004: man-soldier-us
-    3300006: sherman-belt
-    3300008: sherman-body
-    3300010: sherman-gun
-    3300012: sherman-head
-    3300014: sherman-wheel-top1
-    3300016: sherman-wheel-top2
-    3300018: sherman-wheel-top3
-    3300020: sherman-wheel1
-    3300022: sherman-wheel2
-    3300024: sherman-wheel3
-    3300026: sherman-wheel4
-    3300028: sherman-wheel5
-    3300030: sherman-wheel6
-    3300032: sherman-wheel7
-    3300034: sherman-wheel8
-    4300000: sherman-body
-    4300002: sherman-wheel-top3
-    4300004: sherman-head
-    4300006: sherman-gun
-    4300008: sherman-wheel1
-    4300010: sherman-wheel2
-    4300012: sherman-wheel3
-    4300014: sherman-wheel4
-    4300016: sherman-wheel5
-    4300018: sherman-wheel6
-    4300020: sherman-wheel7
-    4300022: sherman-wheel8
-    4300024: sherman-wheel-top1
-    4300026: sherman-wheel-top2
-    4300028: sherman-belt
-    4300030: man-soldier-us
-    4300032: man-soldier-special-ge
-    4300034: man-soldier-ge
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: man-soldier-ge
+  - first:
+      1: 100002
+    second: man-soldier-special-ge
+  - first:
+      1: 100004
+    second: man-soldier-us
+  - first:
+      1: 100006
+    second: sherman
+  - first:
+      1: 100008
+    second: //RootNode
+  - first:
+      1: 100010
+    second: sherman-belt
+  - first:
+      1: 100012
+    second: sherman-body
+  - first:
+      1: 100014
+    second: sherman-gun
+  - first:
+      1: 100016
+    second: sherman-head
+  - first:
+      1: 100018
+    second: sherman-wheel-top1
+  - first:
+      1: 100020
+    second: sherman-wheel-top2
+  - first:
+      1: 100022
+    second: sherman-wheel-top3
+  - first:
+      1: 100024
+    second: sherman-wheel1
+  - first:
+      1: 100026
+    second: sherman-wheel2
+  - first:
+      1: 100028
+    second: sherman-wheel3
+  - first:
+      1: 100030
+    second: sherman-wheel4
+  - first:
+      1: 100032
+    second: sherman-wheel5
+  - first:
+      1: 100034
+    second: sherman-wheel6
+  - first:
+      1: 100036
+    second: sherman-wheel7
+  - first:
+      1: 100038
+    second: sherman-wheel8
+  - first:
+      4: 400000
+    second: man-soldier-ge
+  - first:
+      4: 400002
+    second: man-soldier-special-ge
+  - first:
+      4: 400004
+    second: man-soldier-us
+  - first:
+      4: 400006
+    second: sherman
+  - first:
+      4: 400008
+    second: //RootNode
+  - first:
+      4: 400010
+    second: sherman-belt
+  - first:
+      4: 400012
+    second: sherman-body
+  - first:
+      4: 400014
+    second: sherman-gun
+  - first:
+      4: 400016
+    second: sherman-head
+  - first:
+      4: 400018
+    second: sherman-wheel-top1
+  - first:
+      4: 400020
+    second: sherman-wheel-top2
+  - first:
+      4: 400022
+    second: sherman-wheel-top3
+  - first:
+      4: 400024
+    second: sherman-wheel1
+  - first:
+      4: 400026
+    second: sherman-wheel2
+  - first:
+      4: 400028
+    second: sherman-wheel3
+  - first:
+      4: 400030
+    second: sherman-wheel4
+  - first:
+      4: 400032
+    second: sherman-wheel5
+  - first:
+      4: 400034
+    second: sherman-wheel6
+  - first:
+      4: 400036
+    second: sherman-wheel7
+  - first:
+      4: 400038
+    second: sherman-wheel8
+  - first:
+      23: 2300000
+    second: man-soldier-ge
+  - first:
+      23: 2300002
+    second: man-soldier-special-ge
+  - first:
+      23: 2300004
+    second: man-soldier-us
+  - first:
+      23: 2300006
+    second: sherman-belt
+  - first:
+      23: 2300008
+    second: sherman-body
+  - first:
+      23: 2300010
+    second: sherman-gun
+  - first:
+      23: 2300012
+    second: sherman-head
+  - first:
+      23: 2300014
+    second: sherman-wheel-top1
+  - first:
+      23: 2300016
+    second: sherman-wheel-top2
+  - first:
+      23: 2300018
+    second: sherman-wheel-top3
+  - first:
+      23: 2300020
+    second: sherman-wheel1
+  - first:
+      23: 2300022
+    second: sherman-wheel2
+  - first:
+      23: 2300024
+    second: sherman-wheel3
+  - first:
+      23: 2300026
+    second: sherman-wheel4
+  - first:
+      23: 2300028
+    second: sherman-wheel5
+  - first:
+      23: 2300030
+    second: sherman-wheel6
+  - first:
+      23: 2300032
+    second: sherman-wheel7
+  - first:
+      23: 2300034
+    second: sherman-wheel8
+  - first:
+      33: 3300000
+    second: man-soldier-ge
+  - first:
+      33: 3300002
+    second: man-soldier-special-ge
+  - first:
+      33: 3300004
+    second: man-soldier-us
+  - first:
+      33: 3300006
+    second: sherman-belt
+  - first:
+      33: 3300008
+    second: sherman-body
+  - first:
+      33: 3300010
+    second: sherman-gun
+  - first:
+      33: 3300012
+    second: sherman-head
+  - first:
+      33: 3300014
+    second: sherman-wheel-top1
+  - first:
+      33: 3300016
+    second: sherman-wheel-top2
+  - first:
+      33: 3300018
+    second: sherman-wheel-top3
+  - first:
+      33: 3300020
+    second: sherman-wheel1
+  - first:
+      33: 3300022
+    second: sherman-wheel2
+  - first:
+      33: 3300024
+    second: sherman-wheel3
+  - first:
+      33: 3300026
+    second: sherman-wheel4
+  - first:
+      33: 3300028
+    second: sherman-wheel5
+  - first:
+      33: 3300030
+    second: sherman-wheel6
+  - first:
+      33: 3300032
+    second: sherman-wheel7
+  - first:
+      33: 3300034
+    second: sherman-wheel8
+  - first:
+      43: 4300000
+    second: sherman-body
+  - first:
+      43: 4300002
+    second: sherman-wheel-top3
+  - first:
+      43: 4300004
+    second: sherman-head
+  - first:
+      43: 4300006
+    second: sherman-gun
+  - first:
+      43: 4300008
+    second: sherman-wheel1
+  - first:
+      43: 4300010
+    second: sherman-wheel2
+  - first:
+      43: 4300012
+    second: sherman-wheel3
+  - first:
+      43: 4300014
+    second: sherman-wheel4
+  - first:
+      43: 4300016
+    second: sherman-wheel5
+  - first:
+      43: 4300018
+    second: sherman-wheel6
+  - first:
+      43: 4300020
+    second: sherman-wheel7
+  - first:
+      43: 4300022
+    second: sherman-wheel8
+  - first:
+      43: 4300024
+    second: sherman-wheel-top1
+  - first:
+      43: 4300026
+    second: sherman-wheel-top2
+  - first:
+      43: 4300028
+    second: sherman-belt
+  - first:
+      43: 4300030
+    second: man-soldier-us
+  - first:
+      43: 4300032
+    second: man-soldier-special-ge
+  - first:
+      43: 4300034
+    second: man-soldier-ge
+  externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -123,36 +312,58 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -162,14 +373,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

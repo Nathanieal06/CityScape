@@ -1,143 +1,378 @@
 fileFormatVersion: 2
 guid: 21afbc3e55fb86b48b46caaf6e6410a3
-timeCreated: 1461945170
-licenseType: Store
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Camera
-    100004: cow
-    100006: cow.001
-    100008: Cube
-    100010: elephant
-    100012: elephant.001
-    100014: fish-small_01
-    100016: giraffe
-    100018: giraffe.001
-    100020: horse
-    100022: horse.001
-    100024: Pyramid.001
-    100026: seagull
-    100028: shark
-    100030: shark.001
-    100032: shark.002
-    100034: SharkMain
-    100036: SharkMain.002
-    100038: snake
-    100040: snake.001
-    100042: spider
-    100044: spider.001
-    100046: tree-dead
-    400000: //RootNode
-    400002: Camera
-    400004: cow
-    400006: cow.001
-    400008: Cube
-    400010: elephant
-    400012: elephant.001
-    400014: fish-small_01
-    400016: giraffe
-    400018: giraffe.001
-    400020: horse
-    400022: horse.001
-    400024: Pyramid.001
-    400026: seagull
-    400028: shark
-    400030: shark.001
-    400032: shark.002
-    400034: SharkMain
-    400036: SharkMain.002
-    400038: snake
-    400040: snake.001
-    400042: spider
-    400044: spider.001
-    400046: tree-dead
-    2300000: //RootNode
-    2300002: cow
-    2300004: cow.001
-    2300006: Cube
-    2300008: elephant
-    2300010: elephant.001
-    2300012: fish-small_01
-    2300014: giraffe
-    2300016: giraffe.001
-    2300018: horse
-    2300020: horse.001
-    2300022: Pyramid.001
-    2300024: seagull
-    2300026: shark
-    2300028: shark.001
-    2300030: shark.002
-    2300032: SharkMain
-    2300034: SharkMain.002
-    2300036: snake
-    2300038: snake.001
-    2300040: spider
-    2300042: spider.001
-    2300044: tree-dead
-    3300000: //RootNode
-    3300002: cow
-    3300004: cow.001
-    3300006: Cube
-    3300008: elephant
-    3300010: elephant.001
-    3300012: fish-small_01
-    3300014: giraffe
-    3300016: giraffe.001
-    3300018: horse
-    3300020: horse.001
-    3300022: Pyramid.001
-    3300024: seagull
-    3300026: shark
-    3300028: shark.001
-    3300030: shark.002
-    3300032: SharkMain
-    3300034: SharkMain.002
-    3300036: snake
-    3300038: snake.001
-    3300040: spider
-    3300042: spider.001
-    3300044: tree-dead
-    4300000: seagull_01
-    4300002: seagull
-    4300004: tree-dead
-    4300006: spider.001
-    4300008: spider
-    4300010: fish-small_01
-    4300012: elephant.001
-    4300014: Pyramid.001
-    4300016: elephant
-    4300018: horse.001
-    4300020: horse
-    4300022: shark.002
-    4300024: shark
-    4300026: SharkMain.002
-    4300028: SharkMain
-    4300030: giraffe.001
-    4300032: cow.001
-    4300034: cow
-    4300036: giraffe
-    4300038: snake.001
-    4300040: Cube
-    4300042: snake
-    4300044: shark.001
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Camera
+  - first:
+      1: 100004
+    second: cow
+  - first:
+      1: 100006
+    second: cow.001
+  - first:
+      1: 100008
+    second: Cube
+  - first:
+      1: 100010
+    second: elephant
+  - first:
+      1: 100012
+    second: elephant.001
+  - first:
+      1: 100014
+    second: fish-small_01
+  - first:
+      1: 100016
+    second: giraffe
+  - first:
+      1: 100018
+    second: giraffe.001
+  - first:
+      1: 100020
+    second: horse
+  - first:
+      1: 100022
+    second: horse.001
+  - first:
+      1: 100024
+    second: Pyramid.001
+  - first:
+      1: 100026
+    second: seagull
+  - first:
+      1: 100028
+    second: shark
+  - first:
+      1: 100030
+    second: shark.001
+  - first:
+      1: 100032
+    second: shark.002
+  - first:
+      1: 100034
+    second: SharkMain
+  - first:
+      1: 100036
+    second: SharkMain.002
+  - first:
+      1: 100038
+    second: snake
+  - first:
+      1: 100040
+    second: snake.001
+  - first:
+      1: 100042
+    second: spider
+  - first:
+      1: 100044
+    second: spider.001
+  - first:
+      1: 100046
+    second: tree-dead
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Camera
+  - first:
+      4: 400004
+    second: cow
+  - first:
+      4: 400006
+    second: cow.001
+  - first:
+      4: 400008
+    second: Cube
+  - first:
+      4: 400010
+    second: elephant
+  - first:
+      4: 400012
+    second: elephant.001
+  - first:
+      4: 400014
+    second: fish-small_01
+  - first:
+      4: 400016
+    second: giraffe
+  - first:
+      4: 400018
+    second: giraffe.001
+  - first:
+      4: 400020
+    second: horse
+  - first:
+      4: 400022
+    second: horse.001
+  - first:
+      4: 400024
+    second: Pyramid.001
+  - first:
+      4: 400026
+    second: seagull
+  - first:
+      4: 400028
+    second: shark
+  - first:
+      4: 400030
+    second: shark.001
+  - first:
+      4: 400032
+    second: shark.002
+  - first:
+      4: 400034
+    second: SharkMain
+  - first:
+      4: 400036
+    second: SharkMain.002
+  - first:
+      4: 400038
+    second: snake
+  - first:
+      4: 400040
+    second: snake.001
+  - first:
+      4: 400042
+    second: spider
+  - first:
+      4: 400044
+    second: spider.001
+  - first:
+      4: 400046
+    second: tree-dead
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: cow
+  - first:
+      23: 2300004
+    second: cow.001
+  - first:
+      23: 2300006
+    second: Cube
+  - first:
+      23: 2300008
+    second: elephant
+  - first:
+      23: 2300010
+    second: elephant.001
+  - first:
+      23: 2300012
+    second: fish-small_01
+  - first:
+      23: 2300014
+    second: giraffe
+  - first:
+      23: 2300016
+    second: giraffe.001
+  - first:
+      23: 2300018
+    second: horse
+  - first:
+      23: 2300020
+    second: horse.001
+  - first:
+      23: 2300022
+    second: Pyramid.001
+  - first:
+      23: 2300024
+    second: seagull
+  - first:
+      23: 2300026
+    second: shark
+  - first:
+      23: 2300028
+    second: shark.001
+  - first:
+      23: 2300030
+    second: shark.002
+  - first:
+      23: 2300032
+    second: SharkMain
+  - first:
+      23: 2300034
+    second: SharkMain.002
+  - first:
+      23: 2300036
+    second: snake
+  - first:
+      23: 2300038
+    second: snake.001
+  - first:
+      23: 2300040
+    second: spider
+  - first:
+      23: 2300042
+    second: spider.001
+  - first:
+      23: 2300044
+    second: tree-dead
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: cow
+  - first:
+      33: 3300004
+    second: cow.001
+  - first:
+      33: 3300006
+    second: Cube
+  - first:
+      33: 3300008
+    second: elephant
+  - first:
+      33: 3300010
+    second: elephant.001
+  - first:
+      33: 3300012
+    second: fish-small_01
+  - first:
+      33: 3300014
+    second: giraffe
+  - first:
+      33: 3300016
+    second: giraffe.001
+  - first:
+      33: 3300018
+    second: horse
+  - first:
+      33: 3300020
+    second: horse.001
+  - first:
+      33: 3300022
+    second: Pyramid.001
+  - first:
+      33: 3300024
+    second: seagull
+  - first:
+      33: 3300026
+    second: shark
+  - first:
+      33: 3300028
+    second: shark.001
+  - first:
+      33: 3300030
+    second: shark.002
+  - first:
+      33: 3300032
+    second: SharkMain
+  - first:
+      33: 3300034
+    second: SharkMain.002
+  - first:
+      33: 3300036
+    second: snake
+  - first:
+      33: 3300038
+    second: snake.001
+  - first:
+      33: 3300040
+    second: spider
+  - first:
+      33: 3300042
+    second: spider.001
+  - first:
+      33: 3300044
+    second: tree-dead
+  - first:
+      43: 4300000
+    second: seagull_01
+  - first:
+      43: 4300002
+    second: seagull
+  - first:
+      43: 4300004
+    second: tree-dead
+  - first:
+      43: 4300006
+    second: spider.001
+  - first:
+      43: 4300008
+    second: spider
+  - first:
+      43: 4300010
+    second: fish-small_01
+  - first:
+      43: 4300012
+    second: elephant.001
+  - first:
+      43: 4300014
+    second: Pyramid.001
+  - first:
+      43: 4300016
+    second: elephant
+  - first:
+      43: 4300018
+    second: horse.001
+  - first:
+      43: 4300020
+    second: horse
+  - first:
+      43: 4300022
+    second: shark.002
+  - first:
+      43: 4300024
+    second: shark
+  - first:
+      43: 4300026
+    second: SharkMain.002
+  - first:
+      43: 4300028
+    second: SharkMain
+  - first:
+      43: 4300030
+    second: giraffe.001
+  - first:
+      43: 4300032
+    second: cow.001
+  - first:
+      43: 4300034
+    second: cow
+  - first:
+      43: 4300036
+    second: giraffe
+  - first:
+      43: 4300038
+    second: snake.001
+  - first:
+      43: 4300040
+    second: Cube
+  - first:
+      43: 4300042
+    second: snake
+  - first:
+      43: 4300044
+    second: shark.001
+  externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -146,36 +381,58 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -185,14 +442,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

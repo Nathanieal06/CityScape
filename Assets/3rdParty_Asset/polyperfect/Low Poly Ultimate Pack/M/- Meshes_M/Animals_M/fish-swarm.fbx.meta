@@ -1,83 +1,198 @@
 fileFormatVersion: 2
 guid: 3372a944636db3e4f9d0c5e640931300
-timeCreated: 1462391578
-licenseType: Store
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: Camera.003
-    100002: cannon_01
-    100004: cannon_01-2
-    100006: coral_01
-    100008: fish-small_01
-    100010: //RootNode
-    100012: fishes-small_01
-    100014: horse_01
-    100016: sea-grass_01
-    100018: sea-grass_02
-    100020: seagull_01
-    100022: starfish_01
-    400000: Camera.003
-    400002: cannon_01
-    400004: cannon_01-2
-    400006: coral_01
-    400008: fish-small_01
-    400010: fishes-small_01
-    400012: //RootNode
-    400014: horse_01
-    400016: sea-grass_01
-    400018: sea-grass_02
-    400020: seagull_01
-    400022: starfish_01
-    2300000: cannon_01
-    2300002: cannon_01-2
-    2300004: coral_01
-    2300006: fish-small_01
-    2300008: fishes-small_01
-    2300010: horse_01
-    2300012: sea-grass_01
-    2300014: sea-grass_02
-    2300016: seagull_01
-    2300018: starfish_01
-    2300020: //RootNode
-    3300000: cannon_01
-    3300002: cannon_01-2
-    3300004: coral_01
-    3300006: fish-small_01
-    3300008: fishes-small_01
-    3300010: horse_01
-    3300012: sea-grass_01
-    3300014: sea-grass_02
-    3300016: seagull_01
-    3300018: starfish_01
-    3300020: //RootNode
-    4300000: fishes-small_01
-    4300002: sea-grass_02
-    4300004: sea-grass_01
-    4300006: cannon_01
-    4300008: cannon_01-2
-    4300010: coral_01
-    4300012: seagull_01
-    4300014: starfish_01
-    4300016: horse_01
-    4300018: fish-small_01
-    4300020: fish-swarm
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Camera.003
+  - first:
+      1: 100002
+    second: cannon_01
+  - first:
+      1: 100004
+    second: cannon_01-2
+  - first:
+      1: 100006
+    second: coral_01
+  - first:
+      1: 100008
+    second: fish-small_01
+  - first:
+      1: 100010
+    second: //RootNode
+  - first:
+      1: 100012
+    second: fishes-small_01
+  - first:
+      1: 100014
+    second: horse_01
+  - first:
+      1: 100016
+    second: sea-grass_01
+  - first:
+      1: 100018
+    second: sea-grass_02
+  - first:
+      1: 100020
+    second: seagull_01
+  - first:
+      1: 100022
+    second: starfish_01
+  - first:
+      4: 400000
+    second: Camera.003
+  - first:
+      4: 400002
+    second: cannon_01
+  - first:
+      4: 400004
+    second: cannon_01-2
+  - first:
+      4: 400006
+    second: coral_01
+  - first:
+      4: 400008
+    second: fish-small_01
+  - first:
+      4: 400010
+    second: fishes-small_01
+  - first:
+      4: 400012
+    second: //RootNode
+  - first:
+      4: 400014
+    second: horse_01
+  - first:
+      4: 400016
+    second: sea-grass_01
+  - first:
+      4: 400018
+    second: sea-grass_02
+  - first:
+      4: 400020
+    second: seagull_01
+  - first:
+      4: 400022
+    second: starfish_01
+  - first:
+      23: 2300000
+    second: cannon_01
+  - first:
+      23: 2300002
+    second: cannon_01-2
+  - first:
+      23: 2300004
+    second: coral_01
+  - first:
+      23: 2300006
+    second: fish-small_01
+  - first:
+      23: 2300008
+    second: fishes-small_01
+  - first:
+      23: 2300010
+    second: horse_01
+  - first:
+      23: 2300012
+    second: sea-grass_01
+  - first:
+      23: 2300014
+    second: sea-grass_02
+  - first:
+      23: 2300016
+    second: seagull_01
+  - first:
+      23: 2300018
+    second: starfish_01
+  - first:
+      23: 2300020
+    second: //RootNode
+  - first:
+      33: 3300000
+    second: cannon_01
+  - first:
+      33: 3300002
+    second: cannon_01-2
+  - first:
+      33: 3300004
+    second: coral_01
+  - first:
+      33: 3300006
+    second: fish-small_01
+  - first:
+      33: 3300008
+    second: fishes-small_01
+  - first:
+      33: 3300010
+    second: horse_01
+  - first:
+      33: 3300012
+    second: sea-grass_01
+  - first:
+      33: 3300014
+    second: sea-grass_02
+  - first:
+      33: 3300016
+    second: seagull_01
+  - first:
+      33: 3300018
+    second: starfish_01
+  - first:
+      33: 3300020
+    second: //RootNode
+  - first:
+      43: 4300000
+    second: fishes-small_01
+  - first:
+      43: 4300002
+    second: sea-grass_02
+  - first:
+      43: 4300004
+    second: sea-grass_01
+  - first:
+      43: 4300006
+    second: cannon_01
+  - first:
+      43: 4300008
+    second: cannon_01-2
+  - first:
+      43: 4300010
+    second: coral_01
+  - first:
+      43: 4300012
+    second: seagull_01
+  - first:
+      43: 4300014
+    second: starfish_01
+  - first:
+      43: 4300016
+    second: horse_01
+  - first:
+      43: 4300018
+    second: fish-small_01
+  - first:
+      43: 4300020
+    second: fish-swarm
+  externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -86,36 +201,58 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -125,14 +262,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
